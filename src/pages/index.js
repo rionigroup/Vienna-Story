@@ -1,0 +1,60 @@
+import React, { useEffect, useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Home from "../components/Home"
+import { useTranslation } from "react-i18next"
+import "../styles/global.scss"
+import style from "./index.module.scss"
+
+const IndexPage = () => {
+  const { t } = useTranslation()
+  const [cardSet, setCardSet] = useState(null)
+  useEffect(() => {
+    const card = renderCard
+    setTimeout(() => {
+      setCardSet(card)
+    },500)
+  }, [])
+  console.log(t("home_welcomeText"))
+  const menu = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          menuLinks {
+            name
+            link
+            pic_url
+          }
+        }
+      }
+    }
+  `)
+
+  const cardInfo = menu.site.siteMetadata.menuLinks.slice(1)
+
+  const renderCard = cardInfo.map((el, i) => {
+    return (
+      <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <img key={`${el}_${i}`} className={style.imgWrapper} src={el.pic_url} />
+      </div>
+    )
+  })
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Home>
+        <div className={style.titleWrapper}>
+          <h3>{t("home_welcomeText")}</h3>
+          <h5>{t("home_subWelcomeText")}</h5>
+        </div>
+        <div className={style.contentWrapper}>
+          { cardSet }
+          </div>
+      </Home>
+    </Layout>
+  )
+}
+
+export default IndexPage
