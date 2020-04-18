@@ -13,10 +13,35 @@ jobs:
             echo 'Node version' && node -v 
             echo 'Yarn version' && yarn -v
             printenv
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-package-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install --forzen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-package-{{ checksum "yarn.lock" }}   
+  build_and_deploy:
+    docker:
+      - image: circleci/node:10.16.3
+    working_directory: ~/app
+    steps:  
+      - restore_cache:
+          name: Restore Yarna Cache
+          key: yarn-package-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build and Deploy
+          command: |
+            yarn run build && yarn run deploy
 
 workflows:
-  version: 2
-  Example_Workflow:
+  version: 2.1
+  build:
     jobs:
       - setup
+      - build_and_deploy:
+          requires:
+            - setup
   
