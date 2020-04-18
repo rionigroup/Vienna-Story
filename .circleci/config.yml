@@ -9,10 +9,10 @@ jobs:
       - run: 
           name: print setting env
           command: |
-          echo 'Docker container setup under' $PWD
-          echo 'Node version' && node -v 
-          echo 'Yarn version' && yarn -v
-          printenv
+            echo 'Docker container setup under' $PWD
+            echo 'Node version' && node -v 
+            echo 'Yarn version' && yarn -v
+            printenv
 
 workflows:
   version: 2
