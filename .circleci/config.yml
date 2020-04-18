@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Build and Deploy
           command: |
-            yarn run build && yarn run deploy
+            yarn run build && yarn run deploy --yes
 
 workflows:
   version: 2
