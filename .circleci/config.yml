@@ -25,10 +25,10 @@ jobs:
           key: yarn-package-{{ checksum "yarn.lock" }}   
           paths:
             - node_modules
-       - save_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - ~/app
+      - save_cache:
+        key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+        paths:
+          - ~/app
   build_and_deploy:
     docker:
       - image: circleci/node:10.16.3
