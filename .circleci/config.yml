@@ -25,11 +25,17 @@ jobs:
           key: yarn-package-{{ checksum "yarn.lock" }}   
           paths:
             - node_modules
+       - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/app
   build_and_deploy:
     docker:
       - image: circleci/node:10.16.3
     working_directory: ~/app
     steps:  
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           name: Restore Yarna Cache
           key: yarn-package-{{ checksum "yarn.lock" }}
