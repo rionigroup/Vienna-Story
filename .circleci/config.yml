@@ -1,24 +1,22 @@
 viesion: 2.1
 jobs:
-  build:
+  setup:
     docker:
       - image: circleci/node:10.16.3
+    working_directory: ~/app
     steps:
       - checkout
       - run: 
-          name: The first step
+          name: print setting env
           command: |
-            echo 'Hello World'
-            echo $PWD
-      - run:
-          name: List All Files here
-          command: ls -al
-      - run:
-          name: Node Js version
-          command: node -v
+          echo 'Docker container setup under' $PWD
+          echo 'Node version' && node -v 
+          echo 'Yarn version' && yarn -v
+          printenv
 
 workflows:
   version: 2
   Example_Workflow:
     jobs:
-      - build
+      - setup
+  
