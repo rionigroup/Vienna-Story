@@ -1,8 +1,12 @@
 viesion: 2.1
-  jobs:
-    build:
-      docker:
-        - image: circlecu/node: 10.16.3
-      steps:
-        - checkout
-        - run: echo "hello world"
+jobs:
+  build:
+    docker:
+      - image: circlecu/node: 10.16.3
+    steps:
+      - checkout
+      - run: 
+          name: The first step
+          command: |
+            echo 'Hello World'
+            echo $PWD
