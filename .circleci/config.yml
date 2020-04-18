@@ -10,3 +10,15 @@ jobs:
           command: |
             echo 'Hello World'
             echo $PWD
+      - run:
+          name: List All Files here
+          command: ls -al
+      - run:
+          name: Node Js version
+          command: node -v
+
+workflows:
+  version: 2
+  Example_Workflow:
+    jobs:
+      - build
