@@ -1,6 +1,9 @@
 viesion: 2.1
 jobs:
   setup:
+    branches:
+      only:
+        - master
     docker:
       - image: circleci/node:10.16.3
     working_directory: ~/app
@@ -30,6 +33,9 @@ jobs:
           paths:
             - ~/app
   build_and_deploy:
+    branches:
+      only:
+        - master
     docker:
       - image: circleci/node:10.16.3
     working_directory: ~/app
@@ -52,7 +58,3 @@ workflows:
       - build_and_deploy:
           requires:
             - setup
-          filters:
-            branches:
-              only:
-                - master
