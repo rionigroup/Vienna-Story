@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import style from './home.module.css'
+import style from './home.module.scss'
 
 const Home = ({children}) => {
   return(

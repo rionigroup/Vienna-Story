@@ -7,16 +7,26 @@ import { useTranslation } from "react-i18next"
 import "../styles/global.scss"
 import style from "./index.module.scss"
 
+const opacityStyle = {
+  opacity: 0
+}
+
+const noOpacityStyle = {
+  opacity: 1,
+  transition: 'opacity 1s'
+}
+
 const IndexPage = () => {
   const { t } = useTranslation()
   const [cardSet, setCardSet] = useState(null)
+  const [isCardReady, setIsCardReady] = useState(false)
   useEffect(() => {
     const card = renderCard
+    setCardSet(card)
     setTimeout(() => {
-      setCardSet(card)
-    },500)
+      setIsCardReady(true)
+    }, 1000)
   }, [])
-  console.log(t("home_welcomeText"))
   const menu = useStaticQuery(graphql`
     query {
       site {
@@ -44,14 +54,14 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Home>
-        <div className={style.titleWrapper}>
-          <h3>{t("home_welcomeText")}</h3>
-          <h5>{t("home_subWelcomeText")}</h5>
-        </div>
-        <div className={style.contentWrapper}>
-          { cardSet }
+      <Home isOpacity={true}>
+        <div style={isCardReady ? noOpacityStyle : opacityStyle}>
+          <div className={style.titleWrapper}>
+            <h3>{t("home_welcomeText")}</h3>
+            <h5>{t("home_subWelcomeText")}</h5>
           </div>
+          <div className={style.contentWrapper}>{cardSet}</div>
+        </div>
       </Home>
     </Layout>
   )

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGlobe, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
+import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import DropDown from "../components/Dropdown"
 import style from "./header.module.scss"
 
@@ -55,11 +55,7 @@ const Header = () => {
       <div className={style.headWrapper}>
         <h3 style={{ margin: "auto 1em" }}>
           <Link to="/" className={style.headerText}>
-            <span style={{ color: "#80cbc4" }}>
-              GL
-              <FontAwesomeIcon icon={faGlobeEurope}/>
-              CAL
-            </span>
+            <span>GLOCAL</span>
           </Link>
         </h3>
         <div style={{ display: "flex" }}>

@@ -1,53 +1,52 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Vienna Story`,
     description: `A front-end environment with Gatsby framework `,
     author: `@rickchang`,
     menuLinks: [
       {
-        name: 'home',
-        link: '/',
-        pic_url: '',
-        isSelected: false
+        name: "home",
+        link: "/",
+        pic_url: "",
+        isSelected: false,
       },
       {
-        name: 'spots',
-        link: '/map',
-        pic_url: 'images/spot.png',
-        isSelected: false
+        name: "traffic",
+        link: "/traffic",
+        pic_url: "images/traffic.png",
+        isSelected: true,
       },
       {
-        name: 'coffee',
-        link: '/coffee',
-        pic_url: 'images/coffee.png',
-        isSelected: false
+        name: "spots",
+        link: "/map",
+        pic_url: "images/spot.png",
+        isSelected: false,
       },
       {
-        name: 'desert',
-        link: '/desert',
-        pic_url: 'images/desert.png',
-        isSelected: false
+        name: "coffee",
+        link: "/coffee",
+        pic_url: "images/coffee.png",
+        isSelected: false,
       },
       {
-        name: 'restaurant',
-        link: '/restaurant',
-        pic_url: 'images/restaurant.png',
-        isSelected: false
+        name: "bnb",
+        link: "/bnb",
+        pic_url: "images/bnb.png",
+        isSelected: false,
       },
       {
-        name: 'bnb',
-        link: '/bnb',
-        pic_url: 'images/bnb.png',
-        isSelected: false
+        name: "restaurant",
+        link: "/restaurant",
+        pic_url: "images/restaurant.png",
+        isSelected: false,
+      },
+      {
+        name: "desert",
+        link: "/desert",
+        pic_url: "images/desert.png",
+        isSelected: false,
       }
-      ,
-      {
-        name: 'traffic',
-        link: '/traffic',
-        pic_url: 'images/traffic.png',
-        isSelected: true
-      }
-    ]
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -55,7 +54,7 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: "vienna-story.com",
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -82,10 +81,10 @@ module.exports = {
       resolve: `gatsby-plugin-layout`,
       options: {
         // add relative path to your layout component
-        component: `${__dirname}/src/components/i18nLayout.js`
-      }
+        component: `${__dirname}/src/components/i18nLayout.js`,
+      },
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
