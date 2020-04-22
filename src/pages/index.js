@@ -42,11 +42,15 @@ const IndexPage = () => {
   `)
 
   const cardInfo = menu.site.siteMetadata.menuLinks.slice(1)
-
+  const clickOnImg = (eve, attr) => {
+    eve.stopPropagation()
+    window.location = attr.link
+  }
   const renderCard = cardInfo.map((el, i) => {
     return (
       <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
-        <img key={`${el}_${i}`} className={style.imgWrapper} src={el.pic_url} />
+
+        <img key={`${el}_${i}`} className={style.imgWrapper} src={el.pic_url} onClick={(eve)=> clickOnImg(eve, el)}/>
       </div>
     )
   })

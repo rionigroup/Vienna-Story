@@ -17,15 +17,15 @@ module.exports = {
         isSelected: true,
       },
       {
-        name: "spots",
-        link: "/map",
-        pic_url: "images/spot.png",
+        name: "desert",
+        link: "/desert",
+        pic_url: "images/desert.png",
         isSelected: false,
       },
       {
-        name: "coffee",
-        link: "/coffee",
-        pic_url: "images/coffee.png",
+        name: "spots",
+        link: "/map",
+        pic_url: "images/spot.png",
         isSelected: false,
       },
       {
@@ -41,9 +41,9 @@ module.exports = {
         isSelected: false,
       },
       {
-        name: "desert",
-        link: "/desert",
-        pic_url: "images/desert.png",
+        name: "coffee",
+        link: "/coffee",
+        pic_url: "images/coffee.png",
         isSelected: false,
       }
     ],

@@ -2,10 +2,12 @@
 
 .wrapper{
   background: white;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 400;
   box-shadow: 0 2px 2px 0 rgba(255,255,255,0.14), 0 3px 1px -2px rgba(255,255,255,0.14), 0 1px 5px 0 rgba(255,255,255,0.14);
   padding: 0.8em 0.5em;
-  color:$main_teal;
+  color:$gray-darken-1;
   position: absolute;
   width: 100%;
   top: 1.1em;
@@ -15,7 +17,7 @@
     font-size: 0.5em;
     cursor: pointer;
     &:hover {
-      color:$main_light_teal;
+      color:$gray;
     }
   }
 }
