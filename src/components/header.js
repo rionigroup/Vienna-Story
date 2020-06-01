@@ -53,11 +53,9 @@ const Header = () => {
   return (
     <header>
       <div className={style.headWrapper}>
-        <h3 style={{ margin: "auto 1em" }}>
           <Link to="/" className={style.headerText}>
-            <span>GLOCAL</span>
+            <img src='images/logo.png' style={{margin: 'auto 0px'}}></img>
           </Link>
-        </h3>
         <div style={{ display: "flex" }}>
           <h3 style={{ margin: "auto 1em" }} className={style.languageWrapper}>
             <div className={style.langTextWrapper}>

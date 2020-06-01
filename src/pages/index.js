@@ -49,7 +49,6 @@ const IndexPage = () => {
   const renderCard = cardInfo.map((el, i) => {
     return (
       <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
-
         <img key={`${el}_${i}`} className={style.imgWrapper} src={el.pic_url} onClick={(eve)=> clickOnImg(eve, el)}/>
       </div>
     )
@@ -59,13 +58,15 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Home isOpacity={true}>
-        <div style={isCardReady ? noOpacityStyle : opacityStyle}>
-          <div className={style.titleWrapper}>
+        {/* <div > */}
+          <div className={style.titleWrapper} style={isCardReady ? noOpacityStyle : opacityStyle}>
             <h3>{t("home_welcomeText")}</h3>
             <h5>{t("home_subWelcomeText")}</h5>
           </div>
-          <div className={style.contentWrapper}>{cardSet}</div>
-        </div>
+          <div className={style.contentWrapper} style={isCardReady ? noOpacityStyle : opacityStyle}>
+            {cardSet}
+          </div>
+        {/* </div> */}
       </Home>
     </Layout>
   )

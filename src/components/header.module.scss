@@ -12,11 +12,7 @@
 }
 
 .headerText {
-  text-decoration: none;
-  font-weight: bold;
-  span {
-    color: #f4e7da;
-  }
+  width: 200px;
 }
 
 .langTextWrapper {
@@ -24,7 +20,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #609595;
 }
 
 .languageWrapper {
@@ -51,7 +47,7 @@
     padding: 20px;
   }
   .languageText {
-    color: #0b2d2c;
+    // color: #0b2d2c;
     font-weight: bold;
   }
 }
@@ -59,7 +55,7 @@
 @media screen and (max-width: 700px) {
   .languageText {
     font-size: 0.6em;
-    color: $gray-darken-2;
+    // color: $gray-darken-2;
   }
   .headerText {
     font-size: 0.8em;
@@ -68,7 +64,7 @@
     }
   }
   .langTextWrapper{
-    color: $gray-darken-2;
+    // color: $gray-darken-2;
   }
   .headWrapper {
     background:rgba(255,255,255,0.8);
