@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "vienna-story.com",
+        bucketName: "stories-of-vienna.com",
       },
     },
     {
