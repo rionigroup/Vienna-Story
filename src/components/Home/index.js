@@ -1,22 +1,26 @@
 import PropTypes from "prop-types"
 import React from "react"
-import style from './home.module.scss'
+import style from "./home.module.scss"
 
-const Home = ({children}) => {
-  return(
-    <div className={style.background}>
-        {children}
+const Home = ({ children, fixHeight }) => {
+  return (
+    <div
+      className={style.background}
+      style={fixHeight ? {} : { height: "auto" }}
+    >
+      {children}
     </div>
   )
 }
 
-
 Home.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  fixHeight: PropTypes.bool
 }
 
 Home.defaultProps = {
-  children: <div/>
+  children: <div />,
+  fixHeight: true
 }
 
 export default Home
