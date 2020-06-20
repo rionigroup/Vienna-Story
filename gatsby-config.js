@@ -11,9 +11,9 @@ module.exports = {
         isSelected: false,
       },
       {
-        name: "music",
-        link: "/music",
-        pic_url: "images/music.png",
+        name: "culture",
+        link: "/culture",
+        pic_url: "images/culture.png",
         isSelected: true,
       },
       {
@@ -23,9 +23,9 @@ module.exports = {
         isSelected: false,
       },
       {
-        name: "food",
-        link: "/food",
-        pic_url: "images/food.png",
+        name: "shopping",
+        link: "/shopping",
+        pic_url: "images/shopping.png",
         isSelected: false,
       },
       {
@@ -35,9 +35,9 @@ module.exports = {
         isSelected: false,
       },
       {
-        name: "map",
-        link: "/map",
-        pic_url: "images/map.png",
+        name: "food",
+        link: "/food",
+        pic_url: "images/food.png",
         isSelected: false,
       },
       {
@@ -50,6 +50,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-169399630-2",
+      },
+    },
     {
       resolve: `gatsby-plugin-s3`,
       options: {

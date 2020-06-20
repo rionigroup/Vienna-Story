@@ -1,34 +1,34 @@
 import React, { useState } from "react"
 import SEO from "../components/seo"
-import Home from "../components/Home"
+import Content from "../components/Content"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core"
+import Temp1  from '../components/Template/tem1'
 import Grid from "@material-ui/core/Grid"
 
 
 const useStyles = makeStyles(theme => ({
-  gridRoot: {
-    width: "100%",
-    margin: theme.spacing(3)
-  },
   container: {
     position: 'relative',
-    top: '10em'
+    top: '7em',
+    width: "80%",
+    height: "100vh",
+    margin: theme.spacing(2),
   }
 }))
 
-const Wellness = () => {
+const Music = () => {
   const classes = useStyles()
   return (
     <Layout>
-      <SEO title="vienna Wellness" />
-      <Home fixHeight={false}>
-        <div className={classes.container} style={{ height: "100vh" }}>
-        <h3 style={{color: 'white'}}>Wellness</h3>
+      <SEO title="vienna music" />
+      <Content>
+        <div className={classes.container}>
+          <Temp1/>
         </div>
-      </Home>
+      </Content>
     </Layout>
   )
 }
 
-export default Wellness
+export default Music

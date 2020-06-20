@@ -53,7 +53,7 @@ const IndexPage = () => {
           key={`${el}_${i}`}
           className={style.imgWrapper}
           src={el.pic_url}
-          onClick={eve => clickOnImg(eve, el)}
+          // onClick={eve => clickOnImg(eve, el)}
         />
       </div>
     )
