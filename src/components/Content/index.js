@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    background: '#f1f1f1',
+    // background: '#f1f1f1',
     zIndex: '10',
   }
 }))

@@ -14,7 +14,7 @@ const i18nLayout = ({ children }) => {
         style={{
           margin: `0 auto`,
           maxWidth: "100vw",
-          overflow: "hidden",
+          // overflow: "hidden",
         }}
       >
         {children}

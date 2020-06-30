@@ -4,16 +4,23 @@ import Content from "../components/Content"
 import Layout from "../components/layout"
 import { makeStyles } from "@material-ui/core"
 import Temp1  from '../components/Template/tem1'
+import Temp2 from '../components/Template/tem2'
 import Grid from "@material-ui/core/Grid"
 
 
 const useStyles = makeStyles(theme => ({
-  container: {
+  firstContainer: {
     position: 'relative',
     top: '7em',
     width: "80%",
     height: "100vh",
-    margin: theme.spacing(2),
+    margin: theme.spacing(1),
+  },
+  container: {
+    position: 'relative',
+    width: "80%",
+    height: "100vh",
+    margin: theme.spacing(1),
   }
 }))
 
@@ -23,8 +30,13 @@ const Music = () => {
     <Layout>
       <SEO title="vienna music" />
       <Content>
-        <div className={classes.container}>
+        <div className={classes.firstContainer}>
           <Temp1/>
+        </div>
+      </Content>
+      <Content>
+        <div className={classes.container}>
+          <Temp2/>
         </div>
       </Content>
     </Layout>

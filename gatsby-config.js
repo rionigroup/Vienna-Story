@@ -58,6 +58,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Bebas Neue`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: "stories-of-vienna.com",

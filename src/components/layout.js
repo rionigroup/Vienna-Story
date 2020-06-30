@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "../components/header"
-// import Footer from "../components/footer"
+import Footer from "../components/footer"
 import "./layout.css"
 
 const Layout = ({ children, t }) => {
@@ -16,7 +16,7 @@ const Layout = ({ children, t }) => {
     <>
       <Header siteTitle="Logo" />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

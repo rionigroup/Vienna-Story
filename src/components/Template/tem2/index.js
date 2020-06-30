@@ -36,7 +36,8 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
-    background: "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
+    background:
+      "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
     width: "350px",
     height: "330px",
     borderRadius: theme.borderRadius,
@@ -47,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     width: "400px",
     height: "330px",
     top: "5%",
-    left: "-20%",
+    left: "5%",
   },
   photo: {
     width: "100%",
@@ -66,6 +67,17 @@ const Template = () => {
       alignItems="center"
       className={classes.root}
     >
+      <Grid container item xs={5} justify={"center"}>
+        <div className={classes.backgroundCard}>
+          <Card className={classes.backBlock}>
+            <CardMedia
+              className={classes.photo}
+              image="/demo.png"
+              title="Paella dish"
+            />
+          </Card>
+        </div>
+      </Grid>
       <Grid item xs={7} justify="center">
         <div className={classes.contentWrapper}>
           <Typography variant={"h4"} className={classes.bigTitle}>
@@ -89,17 +101,6 @@ const Template = () => {
             <span>+43 9 99999999</span>
           </Typography>
           <SocialMedia />
-        </div>
-      </Grid>
-      <Grid container item xs={5} justify={"center"}>
-        <div className={classes.backgroundCard}>
-          <Card className={classes.backBlock}>
-            <CardMedia
-              className={classes.photo}
-              image="/demo.png"
-              title="Paella dish"
-            />
-          </Card>
         </div>
       </Grid>
     </Grid>
