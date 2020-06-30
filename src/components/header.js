@@ -74,14 +74,14 @@ const Header = () => {
   return (
     <header>
       <div className={style.headWrapper}>
-        <Grid item xs={7} sm={9} md={9} lg={10}>
+        <Grid item xs={7} sm={9} md={9} lg={9}>
           <Link to="/" className={classes.mediaWrapper}>
             <CardMedia image="images/logo.png" className={classes.media} />
           </Link>
         </Grid>
 
-        <Grid item container xs={5} sm={3} md={3} lg={2}>
-          <Grid item container xs={6} justify={'center'} alignItems={'center'}>
+        <Grid item container xs={5} sm={3} md={3} lg={3}>
+          <Grid item container xs={10} justify={'flex-end'} alignItems={'center'}>
             <h3
               style={{ margin: "auto 1em" }}
               className={style.languageWrapper}
@@ -104,7 +104,7 @@ const Header = () => {
           <Grid
             item
             container
-            xs={6}
+            xs={2}
             justify={"center"}
             alignItems={"center"}
             style={{ height: "100%", width: "100%" }}
