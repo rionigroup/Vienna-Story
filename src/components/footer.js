@@ -79,8 +79,6 @@ const Footer = () => {
           <h5>
             <span
               style={{ color: "#609595", cursor: "pointer" }}
-              // onMouseEnter={handleOnMouseEnter}
-              // onMouseLeave={handleOnMouseLeave}
               onClick={() => {
                 window.open("https://www.rionigroup.com")
               }}
@@ -89,7 +87,6 @@ const Footer = () => {
             </span>
           </h5>
         </div>
-        {/* {isPopBlockOpen && <PopUp />} */}
       </div>
     </footer>
   )

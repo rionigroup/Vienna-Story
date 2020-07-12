@@ -1,9 +1,33 @@
 import React from "react"
 import PropTypes from "prop-types"
-import style from "./index.module.scss"
+import { makeStyles } from '@material-ui/core'
+
+const useStyles = makeStyles(theme => ({
+  wrapper: {
+    background: 'white',
+    borderRadius: '8px',
+    fontSize: '1.1em',
+    fontWeight: '400',
+    boxShadow: '0 2px 2px 0 rgba(255,255,255,0.14), 0 3px 1px -2px rgba(255,255,255,0.14), 0 1px 5px 0 rgba(255,255,255,0.14)',
+    padding: '0.8em 0.5em',
+    color: theme.palette.grey[600],
+    position: 'absolute',
+    width: '100%',
+    top: '1.1em',
+    zIndex: '800',
+    '& li': {
+      fontSize: '0.5em',
+      cursor: 'pointer',
+      '&:hover': {
+        color: theme.palette.grey[300]
+      }
+    }
+  }
+}))
 
 const DropDown = props => {
   const { isShow, elements, clickFunc } = props
+  const classes = useStyles()
   const items = elements.map((el, i) => (
     <li key={`${el}_${i}`} onClick={eve => handleOnClick(eve, el)}>
       {el.text}
@@ -16,7 +40,7 @@ const DropDown = props => {
   }
   const render = () => {
     if (isShow) {
-      return <ul className={style.wrapper}>{items}</ul>
+      return <ul className={classes.wrapper}>{items}</ul>
     } else {
       return null
     }

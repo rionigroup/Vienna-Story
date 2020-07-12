@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
-import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import DropDown from "../components/Dropdown"
@@ -9,32 +8,60 @@ import Tooltip from "../components/Tooltip"
 import Grid from "@material-ui/core/Grid"
 import CardMedia from "@material-ui/core/CardMedia"
 import { makeStyles } from "@material-ui/core"
-import style from "./header.module.scss"
 
 const langs = [
   { text: "English", value: "en-US" },
-  { text: "中文(繁體)", value: "zh-TW" },
+  { text: "中文", value: "zh-TW" },
   { text: "日本語", value: "jp" },
 ]
 
 const useStyles = makeStyles(theme => ({
-  mediaWrapper: {
-    width: "100%",
-    height: "100%",
-  },
-  media: {
-    width: "250px",
-    height: "35px",
-    margin: "auto 10px",
-    [theme.breakpoints.down("xs")]: {
-      width: "60%",
-      height: "22px",
-    },
-  },
   roundMap: {
     width: "40px",
     height: "40px",
     cursor: "pointer",
+  },
+  headWrapper: {
+    position:'fixed',
+    zIndex:'999',
+    margin:'0 auto',
+    width:'100vw',
+    padding:'1.45rem 1.0875rem',
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    [theme.breakpoints.down('sm')]: {
+      // backgroundColor: 'rgba(255, 255, 255, 0.4)',
+      padding: '20px'
+    }
+  },
+  languageWrapper: {
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    position:'relative'
+  },
+  langTextWrapper: {
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+    color:'#609595'
+  },
+  languageText: {
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    fontWeight:'500',
+    fontSize:'0.6em',
+    margin:'auto 1em',
+    cursor:'pointer',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: 'bold',
+      fontSize: '0.5em'
+    }
   },
 }))
 
@@ -73,22 +100,18 @@ const Header = () => {
 
   return (
     <header>
-      <div className={style.headWrapper}>
+      <div className={classes.headWrapper}>
         <Grid item xs={7} sm={9} md={9} lg={9}>
-          <Link to="/" className={classes.mediaWrapper}>
-            <CardMedia image="images/logo.png" className={classes.media} />
-          </Link>
         </Grid>
-
         <Grid item container xs={5} sm={3} md={3} lg={3}>
           <Grid item container xs={10} justify={'flex-end'} alignItems={'center'}>
             <h3
               style={{ margin: "auto 1em" }}
-              className={style.languageWrapper}
+              className={classes.languageWrapper}
             >
-              <div className={style.langTextWrapper}>
+              <div className={classes.langTextWrapper}>
                 <FontAwesomeIcon icon={faGlobe} size="xs" />
-                <span onClick={showMenu} className={style.languageText}>
+                <span onClick={showMenu} className={classes.languageText}>
                   {menuValue}
                 </span>
               </div>
