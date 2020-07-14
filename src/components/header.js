@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
+import { Link } from "gatsby"
 import DropDown from "../components/Dropdown"
 import Tooltip from "../components/Tooltip"
 import Grid from "@material-ui/core/Grid"
@@ -22,50 +23,63 @@ const useStyles = makeStyles(theme => ({
     cursor: "pointer",
   },
   headWrapper: {
-    position:'fixed',
-    zIndex:'999',
-    margin:'0 auto',
-    width:'100vw',
-    padding:'1.45rem 1.0875rem',
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    [theme.breakpoints.down('sm')]: {
-      // backgroundColor: 'rgba(255, 255, 255, 0.4)',
-      padding: '20px'
-    }
+    position: "fixed",
+    zIndex: "999",
+    margin: "0 auto",
+    width: "100vw",
+    padding: "1.45rem 1.0875rem",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px",
+    },
   },
   languageWrapper: {
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    alignItems:'center',
-    position:'relative'
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
   },
   langTextWrapper: {
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'center',
-    alignItems:'center',
-    color:'#609595'
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#609595",
   },
   languageText: {
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    fontWeight:'500',
-    fontSize:'0.6em',
-    margin:'auto 1em',
-    cursor:'pointer',
-    [theme.breakpoints.down('sm')]: {
-      fontWeight: 'bold',
-      fontSize: '0.5em'
-    }
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    fontWeight: "500",
+    fontSize: "0.6em",
+    margin: "auto 1em",
+    cursor: "pointer",
+    [theme.breakpoints.down("sm")]: {
+      fontWeight: "bold",
+      fontSize: "0.5em",
+    },
+  },
+  mediaWrapper: {
+    width: "100%",
+    height: "100%",
+  },
+  media: {
+    width: "250px",
+    height: "35px",
+    margin: "auto 10px",
+    [theme.breakpoints.down("xs")]: {
+      width: "60%",
+      height: "22px",
+    },
   },
 }))
 
-const Header = () => {
+const Header = props => {
+  const { hasLogo } = props
   const { i18n } = useTranslation()
   const [isDropDownShow, setIsDropDownShow] = useState(false)
   const [menuValue, setMenuValue] = useState("English")
@@ -82,7 +96,7 @@ const Header = () => {
 
   const roundMapIcon = (
     <CardMedia
-      image="images/map_round.png"
+      image="/images/map_round.png"
       className={classes.roundMap}
       onClick={() => window.open("https://www.shorturl.at/bfkCN")}
     />
@@ -102,9 +116,20 @@ const Header = () => {
     <header>
       <div className={classes.headWrapper}>
         <Grid item xs={7} sm={9} md={9} lg={9}>
+          {hasLogo && (
+            <Link to="/" className={classes.mediaWrapper}>
+              <CardMedia image="/images/logo.png" className={classes.media} />
+            </Link>
+          )}
         </Grid>
         <Grid item container xs={5} sm={3} md={3} lg={3}>
-          <Grid item container xs={10} justify={'flex-end'} alignItems={'center'}>
+          <Grid
+            item
+            container
+            xs={10}
+            justify={"flex-end"}
+            alignItems={"center"}
+          >
             <h3
               style={{ margin: "auto 1em" }}
               className={classes.languageWrapper}
@@ -132,7 +157,7 @@ const Header = () => {
             alignItems={"center"}
             style={{ height: "100%", width: "100%" }}
           >
-           <Tooltip text={"Vienna Map"} childeNode={roundMapIcon} />
+            <Tooltip text={"Vienna Map"} childeNode={roundMapIcon} />
           </Grid>
         </Grid>
       </div>

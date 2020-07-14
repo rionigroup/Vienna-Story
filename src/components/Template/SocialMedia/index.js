@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 import Grid from "@material-ui/core/Grid"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     "& span": {
       marginLeft: "1em",
       color: "gray",
-      fontSize: "0.8em",
+      fontSize: "0.9em",
     },
   },
 }))
@@ -38,7 +38,16 @@ const SocialMedia = props => {
           style={{ cursor: "pointer" }}
         >
           <a href={el.href} target="blank" className={classes.link}>
-            <FontAwesomeIcon icon={el.icon} color={"gray"} />
+            <FontAwesomeIcon
+              icon={
+                el.icon === 0
+                  ? faFacebookSquare
+                  : el.icon === 1
+                  ? faInstagramSquare
+                  : faMapMarkerAlt
+              }
+              color={"gray"}
+            />
             <span>{el.name}</span>
           </a>
         </Grid>
@@ -71,17 +80,17 @@ SocialMedia.defaultProps = {
     {
       name: "Hermes",
       href: "https://www.facebook.com/",
-      icon: faFacebookSquare,
+      icon: 0,
     },
     {
       name: "@Hermes",
       href: "https://www.instagram.com/rionigroup.co/",
-      icon: faInstagramSquare,
+      icon: 1,
     },
     {
       name: "Hermes",
       href: "https://www.google.com/maps",
-      icon: faMapMarkerAlt,
+      icon: 2,
     },
   ],
 }

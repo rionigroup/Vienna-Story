@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardMedia from "@material-ui/core/CardMedia"
@@ -36,7 +37,8 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
-    background: "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
+    background: theme.palette.grey[500],
+    // "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
     width: "350px",
     height: "330px",
     borderRadius: theme.borderRadius,
@@ -55,7 +57,9 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Template = () => {
+const Template = props => {
+  const { type, name, title, intro, openHours, phone, socialMedia, pic } = props
+  console.log('****', props.name)
   const classes = useStyles()
   return (
     <Grid
@@ -69,26 +73,23 @@ const Template = () => {
       <Grid item xs={7} justify="center">
         <div className={classes.contentWrapper}>
           <Typography variant={"h4"} className={classes.bigTitle}>
-            Hermes
+            {name}
           </Typography>
           <Typography variant={"subtitle1"} className={classes.title}>
-            The Most Unforgettable Showroom in Paris
+            {title}
           </Typography>
           <Typography variant={"body2"} className={classes.textBody}>
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua “Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.”.”
+            {intro}
           </Typography>
           <Typography variant={"overline"} className={classes.subTitle1}>
             Opening:
-            <span>Mon - Fri, 10am - 5pm</span>
+            <span>{openHours}</span>
           </Typography>
           <Typography variant={"overline"} className={classes.subTitle1}>
             Phone:
-            <span>+43 9 99999999</span>
+            <span>{phone}</span>
           </Typography>
-          <SocialMedia />
+          <SocialMedia content={socialMedia}/>
         </div>
       </Grid>
       <Grid container item xs={5} justify={"center"}>
@@ -96,7 +97,7 @@ const Template = () => {
           <Card className={classes.backBlock}>
             <CardMedia
               className={classes.photo}
-              image="/demo.png"
+              image={pic}
               title="Paella dish"
             />
           </Card>
@@ -104,6 +105,48 @@ const Template = () => {
       </Grid>
     </Grid>
   )
+}
+
+Template.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  intro: PropTypes.string,
+  openHours: PropTypes.string,
+  phone: PropTypes.string,
+  socialMedia: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      href: PropTypes.string,
+      icon: PropTypes.number,
+    })
+  ),
+  pic: PropTypes.string,
+}
+
+Template.defaultProps = {
+  type: "attraction",
+  name: "Hermes",
+  title: "The Most Unforgettable Showroom in Paris",
+  intro: `“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua “Lorem
+  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.”.”`,
+  openHours: `Mon - Fri, 10am - 5pm`,
+  phone: `+43 9 99999999`,
+  socialMedia: [
+    {
+      name: "Schloß Schönbrunn",
+      href: "https://www.facebook.com/schloss.schoenbrunn/",
+      icon: 0,
+    },
+    {
+      name: "@schoenbrunnpalace",
+      href: "https://www.instagram.com/schoenbrunnpalace/",
+      icon: 1,
+    },
+  ],
+  pic: "/image/noPic.png",
 }
 
 export default Template

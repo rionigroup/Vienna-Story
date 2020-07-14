@@ -98,6 +98,8 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const LayoutWithoutLogo = Layout(false)
+
 const IndexPage = () => {
   const { t } = useTranslation()
   const [cardSet, setCardSet] = useState(null)
@@ -136,14 +138,14 @@ const IndexPage = () => {
           key={`${el}_${i}`}
           className={classes.imgWrapper}
           src={el.pic_url}
-          // onClick={eve => clickOnImg(eve, el)}
+          onClick={eve => clickOnImg(eve, el)} 
         />
       </div>
     )
   })
 
   return (
-    <Layout>
+    <LayoutWithoutLogo>
       <SEO title="Home" />
       <Home isOpacity={true}>
         <div
@@ -151,7 +153,7 @@ const IndexPage = () => {
           style={isCardReady ? noOpacityStyle : opacityStyle}
         >
           <Link to="/" className={classes.mediaWrapper}>
-            <CardMedia image="images/logo.png" className={classes.media} />
+            <CardMedia image="/images/logo.png" className={classes.media} />
           </Link>
           <h5>{t("home_subWelcomeText")}</h5>
         </div>
@@ -162,7 +164,7 @@ const IndexPage = () => {
           {cardSet}
         </div>
       </Home>
-    </Layout>
+    </LayoutWithoutLogo>
   )
 }
 

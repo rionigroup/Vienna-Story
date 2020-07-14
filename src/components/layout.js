@@ -11,10 +11,10 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "./layout.css"
 
-const Layout = ({ children, t }) => {
+const Layout = (hasLogo = false) => ({ children, t }) =>  {
   return (
     <>
-      <Header siteTitle="Logo" />
+      <Header hasLogo />
       <main>{children}</main>
       <Footer />
     </>
