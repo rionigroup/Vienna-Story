@@ -80,6 +80,7 @@ const useStyles = makeStyles(theme => ({
 
 const Header = props => {
   const { hasLogo } = props
+  console.log('****** haslogo', hasLogo)
   const { i18n } = useTranslation()
   const [isDropDownShow, setIsDropDownShow] = useState(false)
   const [menuValue, setMenuValue] = useState("English")

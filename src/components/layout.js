@@ -14,7 +14,7 @@ import "./layout.css"
 const Layout = (hasLogo = false) => ({ children, t }) =>  {
   return (
     <>
-      <Header hasLogo />
+      <Header hasLogo={hasLogo} />
       <main>{children}</main>
       <Footer />
     </>
