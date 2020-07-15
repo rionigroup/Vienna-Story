@@ -24,7 +24,8 @@ module.exports.food = [
       },
     ],
     pic: [
-      '/image/tmp.png'
-    ]
+      '/images/noPic.png'
+    ],
+    temp: 0
   },
 ]

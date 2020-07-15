@@ -23,7 +23,8 @@ module.exports.wellness = [
       },
     ],
     pic: [
-      '/image/tmp.png'
-    ]
+      '/images/noPic.png'
+    ],
+    temp: 0
   },
 ]
