@@ -19,7 +19,10 @@ const useStyles = makeStyles(theme => ({
     "& span": {
       marginLeft: "1em",
       color: "gray",
-      fontSize: "0.9em",
+      fontSize: "1em",
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
     },
   },
 }))
@@ -39,6 +42,7 @@ const SocialMedia = props => {
         >
           <a href={el.href} target="blank" className={classes.link}>
             <FontAwesomeIcon
+              size="lg"
               icon={
                 el.icon === 0
                   ? faFacebookSquare

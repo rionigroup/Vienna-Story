@@ -3,6 +3,7 @@ import SEO from "../../components/seo"
 import { culture } from '../../model/culture'
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
+import BigTitle from '../../components/BigTitle'
 import Content from "../../components/Content"
 import { makeStyles } from "@material-ui/core"
 
@@ -13,10 +14,6 @@ const useStyles = makeStyles(theme => ({
     width: "80%",
     height: "100vh",
     margin: theme.spacing(2),
-  },
-  bigTitle: {
-    width: '100%',
-    textAlign: 'center',
   }
 }))
 
@@ -34,7 +31,7 @@ const Culture = props => {
       <SEO title="vienna Culture" />
       <Content>
         <div className={classes.container}>
-          <h3 className={classes.bigTitle}>Culture</h3>
+        <BigTitle text={'CULTURE'}/>
           <TempList/>
         </div>
       </Content>

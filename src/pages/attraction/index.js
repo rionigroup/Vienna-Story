@@ -4,19 +4,16 @@ import { attraction } from '../../model/attraction'
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
 import Content from "../../components/Content"
+import BigTitle from '../../components/BigTitle'
 import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   container: {
     position: "relative",
-    top: "7em",
+    top: "5em",
     width: "80%",
     height: "100vh",
     margin: theme.spacing(2),
-  },
-  bigTitle: {
-    width: '100%',
-    textAlign: 'center',
   }
 }))
 
@@ -34,7 +31,7 @@ const Attraction = props => {
       <SEO title="vienna attraction" />
       <Content>
         <div className={classes.container}>
-          <h3 className={classes.bigTitle}>Attraction</h3>
+          <BigTitle text={'ATTRACTION'}/>
           <TempList/>
         </div>
       </Content>
@@ -43,3 +40,4 @@ const Attraction = props => {
 }
 
 export default Attraction
+

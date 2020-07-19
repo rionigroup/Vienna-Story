@@ -22,7 +22,7 @@ module.exports.attraction = [
       }
     ],
     pic: [
-      '/images/noPic.png'
+      '/images/attraction.png'
     ],
     temp: 0
   }

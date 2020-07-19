@@ -5,6 +5,7 @@ import Card from "@material-ui/core/Card"
 import CardMedia from "@material-ui/core/CardMedia"
 import Typography from "@material-ui/core/Typography"
 import SocialMedia from "../SocialMedia"
+// import pink from "@material-ui/core/colors/pink"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
@@ -13,6 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   contentWrapper: {
     padding: theme.spacing(5),
+    animation: `$slideFadeRight 1.5s`,
   },
   bigTitle: {
     color: "#609595",
@@ -25,23 +27,26 @@ const useStyles = makeStyles(theme => ({
   textBody: {
     color: theme.palette.grey[600],
     margin: "1em auto",
+    fontSize: "1.1em",
   },
   subTitle1: {
     color: theme.palette.grey[600],
+    fontSize: "0.9em",
     fontWeight: "600",
     display: "block",
     "& span": {
       color: "#609595",
-      margin: "auto 1em",
+      margin: "auto 0.8em",
     },
   },
   backgroundCard: {
     position: "relative",
-    background: theme.palette.grey[500],
+    background: "#609595",
     // "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
     width: "350px",
     height: "330px",
     borderRadius: theme.borderRadius,
+    animation: `$slideFadeLeft 1.5s`,
   },
   backBlock: {
     position: "relative",
@@ -50,16 +55,40 @@ const useStyles = makeStyles(theme => ({
     height: "330px",
     top: "5%",
     left: "-20%",
+    [theme.breakpoints.down("md")]: {
+      top: "0px",
+      left: "0px",
+      width: "100%",
+    },
   },
   photo: {
     width: "100%",
     height: "100%",
   },
+  "@keyframes slideFadeRight": {
+    "0%": {
+      opacity: "0",
+      transform: "translateX(-120px)",
+    },
+    "100%": {
+      opacity: "1",
+      transform: "translateX(0px)",
+    },
+  },
+  "@keyframes slideFadeLeft": {
+    "0%": {
+      opacity: "0",
+      transform: "translateX(120px)",
+    },
+    "100%": {
+      opacity: "1",
+      transform: "translateX(0px)",
+    },
+  },
 }))
 
 const Template = props => {
   const { type, name, title, intro, openHours, phone, socialMedia, pic } = props
-  console.log('****', props.name)
   const classes = useStyles()
   return (
     <Grid
@@ -70,12 +99,12 @@ const Template = props => {
       alignItems="center"
       className={classes.root}
     >
-      <Grid item xs={7} justify="center">
+      <Grid item xs={12} md={12} lg={7} justify="center">
         <div className={classes.contentWrapper}>
-          <Typography variant={"h4"} className={classes.bigTitle}>
+          <Typography variant={"h5"} className={classes.bigTitle}>
             {name}
           </Typography>
-          <Typography variant={"subtitle1"} className={classes.title}>
+          <Typography variant={"h6"} className={classes.title}>
             {title}
           </Typography>
           <Typography variant={"body2"} className={classes.textBody}>
@@ -89,10 +118,10 @@ const Template = props => {
             Phone:
             <span>{phone}</span>
           </Typography>
-          <SocialMedia content={socialMedia}/>
+          <SocialMedia content={socialMedia} />
         </div>
       </Grid>
-      <Grid container item xs={5} justify={"center"}>
+      <Grid container item xs={12} md={12} lg={5} justify={"center"}>
         <div className={classes.backgroundCard}>
           <Card className={classes.backBlock}>
             <CardMedia

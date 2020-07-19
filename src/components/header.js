@@ -10,6 +10,8 @@ import Grid from "@material-ui/core/Grid"
 import CardMedia from "@material-ui/core/CardMedia"
 import { makeStyles } from "@material-ui/core"
 
+const viennaUrl = 'https://www.google.com.tw/maps/place/%E5%A5%A7%E5%9C%B0%E5%88%A9%E7%B6%AD%E4%B9%9F%E7%B4%8D/@48.2038143,16.333146,11.52z/data=!4m5!3m4!1s0x476d079e5136ca9f:0xfdc2e58a51a25b46!8m2!3d48.2081743!4d16.3738189?hl=zh-TW'
+
 const langs = [
   { text: "English", value: "en-US" },
   { text: "中文", value: "zh-TW" },
@@ -80,7 +82,6 @@ const useStyles = makeStyles(theme => ({
 
 const Header = props => {
   const { hasLogo } = props
-  console.log('****** haslogo', hasLogo)
   const { i18n } = useTranslation()
   const [isDropDownShow, setIsDropDownShow] = useState(false)
   const [menuValue, setMenuValue] = useState("English")
@@ -99,7 +100,7 @@ const Header = props => {
     <CardMedia
       image="/images/map_round.png"
       className={classes.roundMap}
-      onClick={() => window.open("https://www.shorturl.at/bfkCN")}
+      onClick={() => window.open(viennaUrl)}
     />
   )
 
