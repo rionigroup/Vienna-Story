@@ -29,11 +29,7 @@ const useStyles = makeStyles(theme => ({
   media: {
     width: "250px",
     height: "35px",
-    margin: "auto 10px",
-    [theme.breakpoints.down("xs")]: {
-      width: "60%",
-      height: "40px",
-    },
+    margin: "auto 10px"
   },
   titleWrapper: {
     width: "100%",
@@ -68,6 +64,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: "300",
     width: "100%",
     minHeight: "250px",
+    height: '100%',
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
@@ -80,7 +77,7 @@ const useStyles = makeStyles(theme => ({
     cursor:'pointer',
     borderRadius:'20px',
     boxShadow:'0 10px 15px -3px rgba(0, 0, 0, 0.1) 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-    height:'auto',
+    height:'100%',
     width:'90%',
     transition: '0.4s',
     '&:hover': {
