@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useTranslation } from "react-i18next"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -10,7 +10,10 @@ import Grid from "@material-ui/core/Grid"
 import CardMedia from "@material-ui/core/CardMedia"
 import { makeStyles } from "@material-ui/core"
 
-const viennaUrl = 'https://www.google.com.tw/maps/place/%E5%A5%A7%E5%9C%B0%E5%88%A9%E7%B6%AD%E4%B9%9F%E7%B4%8D/@48.2038143,16.333146,11.52z/data=!4m5!3m4!1s0x476d079e5136ca9f:0xfdc2e58a51a25b46!8m2!3d48.2081743!4d16.3738189?hl=zh-TW'
+const viennaUrl =
+  "https://www.google.com.tw/maps/place/%E5%A5%A7%E5%9C%B0%E5%88%A9%E7%B6%AD%E4%B9%9F%E7%B4%8D/@48.2038143,16.333146,11.52z/data=!4m5!3m4!1s0x476d079e5136ca9f:0xfdc2e58a51a25b46!8m2!3d48.2081743!4d16.3738189?hl=zh-TW"
+
+let shouldStopRender = false
 
 const langs = [
   { text: "English", value: "en-US" },
@@ -29,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: "999",
     margin: "0 auto",
     width: "100vw",
-    padding: "1.45rem 1.0875rem",
+    padding: "0.8em 1.0875rem",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -84,9 +87,27 @@ const Header = props => {
   const { hasLogo } = props
   const { i18n } = useTranslation()
   const [isDropDownShow, setIsDropDownShow] = useState(false)
+  const [isNavOverBody, setIsNavOverBody] = useState(false)
   const [menuValue, setMenuValue] = useState("English")
-
   const classes = useStyles()
+
+  const handleGlobalScroll = eve => {
+    if (window.scrollY < 1) {
+      if(shouldStopRender) {
+        setIsNavOverBody(false)
+        shouldStopRender = false
+      }
+    }
+    if (window.scrollY >= 1 && !shouldStopRender) {
+      setIsNavOverBody(true)
+      shouldStopRender = true
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleGlobalScroll)
+    return () => window.removeEventListener("scroll", handleGlobalScroll)
+  }, [])
 
   const clickMenu = item => {
     if (!item) return null
@@ -116,7 +137,10 @@ const Header = props => {
 
   return (
     <header>
-      <div className={classes.headWrapper}>
+      <div
+        className={classes.headWrapper}
+        style={isNavOverBody ? { background: "rgba(235, 216, 208, 0.3)" } : null}
+      >
         <Grid item xs={7} sm={9} md={9} lg={9}>
           {hasLogo && (
             <Link to="/" className={classes.mediaWrapper}>
