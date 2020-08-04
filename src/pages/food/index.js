@@ -28,7 +28,7 @@ const Food = props => {
   const classes = useStyles()
   return (
     <LayoutWithLogo>
-      <SEO title="vienna food" />
+      <SEO title="Vienna Food" />
       <Content>
         <div className={classes.container}>
         <BigTitle text={'FOOD'}/>

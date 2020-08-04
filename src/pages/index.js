@@ -48,7 +48,9 @@ const useStyles = makeStyles(theme => ({
       fontFamily: "Arial, Helvetica, sans-serif",
       fontWeight: "400",
       letterSpacing: "0.1em",
-      fontSize: "1.5em",
+      maxWidth: '1000px',
+      fontSize: "1.2em",
+      lineHeight: '2em'
     },
     [theme.breakpoints.down('sm')]: {
       position: "relative",

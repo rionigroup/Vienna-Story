@@ -28,7 +28,7 @@ const Culture = props => {
   const classes = useStyles()
   return (
     <LayoutWithLogo>
-      <SEO title="vienna Culture" />
+      <SEO title="Vienna Culture" />
       <Content>
         <div className={classes.container}>
         <BigTitle text={'CULTURE'}/>

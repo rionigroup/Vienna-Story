@@ -28,7 +28,7 @@ const Music = () => {
   const classes = useStyles()
   return (
     <Layout>
-      <SEO title="vienna music" />
+      <SEO title="Vienna Music" />
       <Content>
         <div className={classes.firstContainer}>
           <Temp1/>
