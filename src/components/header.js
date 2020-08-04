@@ -13,7 +13,7 @@ import { makeStyles } from "@material-ui/core"
 const viennaUrl =
   "https://www.google.com.tw/maps/place/%E5%A5%A7%E5%9C%B0%E5%88%A9%E7%B6%AD%E4%B9%9F%E7%B4%8D/@48.2038143,16.333146,11.52z/data=!4m5!3m4!1s0x476d079e5136ca9f:0xfdc2e58a51a25b46!8m2!3d48.2081743!4d16.3738189?hl=zh-TW"
 
-let shouldStopRender = false
+let lastScrollTop = 0
 
 const langs = [
   { text: "English", value: "en-US" },
@@ -90,18 +90,14 @@ const Header = props => {
   const [isNavOverBody, setIsNavOverBody] = useState(false)
   const [menuValue, setMenuValue] = useState("English")
   const classes = useStyles()
-
   const handleGlobalScroll = eve => {
-    if (window.scrollY < 1) {
-      if(shouldStopRender) {
-        setIsNavOverBody(false)
-        shouldStopRender = false
-      }
-    }
-    if (window.scrollY >= 1 && !shouldStopRender) {
+    let st = window.pageYOffset || document.documentElement.scrollTop
+    if(st > lastScrollTop) {
       setIsNavOverBody(true)
-      shouldStopRender = true
+    } else {
+      setIsNavOverBody(false)
     }
+    lastScrollTop = st <= 0 ? 0 : st;
   }
 
   useEffect(() => {

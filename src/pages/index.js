@@ -128,7 +128,7 @@ const IndexPage = () => {
   const cardInfo = menu.site.siteMetadata.menuLinks.slice(1)
   const clickOnImg = (eve, attr) => {
     eve.stopPropagation()
-    window.location = attr.link
+    window.open(attr.link, '_blank')
   }
   const renderCard = cardInfo.map((el, i) => {
     return (
