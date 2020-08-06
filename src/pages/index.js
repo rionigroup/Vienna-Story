@@ -57,8 +57,9 @@ const useStyles = makeStyles(theme => ({
       top: "5em",
       height: "180px",
       "& h5": {
-        fontWeight: "300",
-        fontSize: "1em",
+        // fontWeight: "300",
+        // fontSize: "1em",
+        display: "none"
       },
     }
   },
@@ -92,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       width:'60%',
       height:'60%',
-      pointerEvents:'none'
+      // pointerEvents:'none'
     }
   }
 }))
@@ -127,7 +128,7 @@ const IndexPage = () => {
 
   const cardInfo = menu.site.siteMetadata.menuLinks.slice(1)
   const clickOnImg = (eve, attr) => {
-    eve.stopPropagation()
+    // eve.stopPropagation()
     window.open(attr.link, '_blank')
   }
   const renderCard = cardInfo.map((el, i) => {
