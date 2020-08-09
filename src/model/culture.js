@@ -8,8 +8,12 @@ module.exports.culture = [
     The building was designed by Theophil Hansen. 
     Having studied in Athens, he became a exponent of “Greek Revival”, a style which is evident in almost every aspect of the Musikverein’s design. Greek reflections can be seen in the caryatids of the Great Hall and in the columns and the temple roof of the Brahms Saal. All these features together create a wonderfully classical ambience for spectacular performances.
     `,
+    website: {
+      name: "musikverein.at",
+      link: "https://www.musikverein.at"
+    },
     openHours: `Mon-Fri, 09am-8pm`,
-    phone: "'+43 1 5058190",
+    phone: "+43 1 5058190",
     socialMedia: [
       {
         name: "Musikverein Wien",
@@ -21,10 +25,14 @@ module.exports.culture = [
         href: "https://www.instagram.com/musikverein.wien/",
         icon: 1,
       },
+      {
+        name: "map",
+        href:
+          "https://www.google.com/maps/place/Wiener+Musikverein/@48.2004401,16.3706744,17z/data=!3m1!4b1!4m5!3m4!1s0x476d079d51daeac7:0x82c12bc03731834f!8m2!3d48.200494!4d16.3727795",
+        icon: 2,
+      },
     ],
-    pic: [
-      '/images/noPic.png'
-    ],
-    temp: 0
+    pic: ["/images/culture/1.jpg"],
+    temp: 0,
   },
 ]

@@ -1,3 +1,6 @@
+/**
+ * Template: left is content, right is picture
+ */
 import React from "react"
 import PropTypes from "prop-types"
 import Grid from "@material-ui/core/Grid"
@@ -5,7 +8,6 @@ import Card from "@material-ui/core/Card"
 import CardMedia from "@material-ui/core/CardMedia"
 import Typography from "@material-ui/core/Typography"
 import SocialMedia from "../SocialMedia"
-// import pink from "@material-ui/core/colors/pink"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
@@ -27,11 +29,11 @@ const useStyles = makeStyles(theme => ({
   textBody: {
     color: theme.palette.grey[600],
     margin: "1em auto",
-    fontSize: "1.1em",
+    fontSize: "1em",
   },
   subTitle1: {
     color: theme.palette.grey[600],
-    fontSize: "0.9em",
+    fontSize: "0.8em",
     fontWeight: "600",
     display: "block",
     "& span": {
@@ -42,7 +44,6 @@ const useStyles = makeStyles(theme => ({
   backgroundCard: {
     position: "relative",
     background: "#609595",
-    // "radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(247,239,138,1) 68%, rgba(219,184,94,1) 92%, rgba(223,189,105,1) 99%)",
     width: "350px",
     height: "330px",
     borderRadius: theme.borderRadius,
@@ -87,8 +88,17 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Template = props => {
-  const { type, name, title, intro, openHours, phone, socialMedia, pic } = props
+const Template1 = props => {
+  const {
+    name,
+    title,
+    intro,
+    website,
+    openHours,
+    phone,
+    socialMedia,
+    pic,
+  } = props
   const classes = useStyles()
   return (
     <Grid
@@ -109,6 +119,12 @@ const Template = props => {
           </Typography>
           <Typography variant={"body2"} className={classes.textBody}>
             {intro}
+          </Typography>
+          <Typography variant={"overline"} className={classes.subTitle1}>
+            Official Website:
+            <a href={website.link} target="blank">
+              <span>{website.name}</span>
+            </a>
           </Typography>
           <Typography variant={"overline"} className={classes.subTitle1}>
             Opening:
@@ -136,11 +152,15 @@ const Template = props => {
   )
 }
 
-Template.propTypes = {
+Template1.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
   intro: PropTypes.string,
+  website: PropTypes.shape({
+    name: PropTypes.string,
+    link: PropTypes.string,
+  }),
   openHours: PropTypes.string,
   phone: PropTypes.string,
   socialMedia: PropTypes.arrayOf(
@@ -150,10 +170,10 @@ Template.propTypes = {
       icon: PropTypes.number,
     })
   ),
-  pic: PropTypes.string,
+  pic: PropTypes.arrayOf(PropTypes.string),
 }
 
-Template.defaultProps = {
+Template1.defaultProps = {
   type: "attraction",
   name: "Hermes",
   title: "The Most Unforgettable Showroom in Paris",
@@ -161,6 +181,10 @@ Template.defaultProps = {
   eiusmod tempor incididunt ut labore et dolore magna aliqua “Lorem
   ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.”.”`,
+  website: {
+    name: "www.google.com",
+    link: "https://www.google.com",
+  },
   openHours: `Mon - Fri, 10am - 5pm`,
   phone: `+43 9 99999999`,
   socialMedia: [
@@ -175,7 +199,7 @@ Template.defaultProps = {
       icon: 1,
     },
   ],
-  pic: "/image/noPic.png",
+  pic: ["/image/noPic.png"],
 }
 
-export default Template
+export default Template1

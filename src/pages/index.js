@@ -133,7 +133,7 @@ const IndexPage = () => {
   }
   const renderCard = cardInfo.map((el, i) => {
     return (
-      <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <div className="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-xs-12" key={i}>
         <img
           key={`${el}_${i}`}
           className={classes.imgWrapper}

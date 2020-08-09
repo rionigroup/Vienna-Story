@@ -3,6 +3,7 @@ import SEO from "../../components/seo"
 import { attraction } from '../../model/attraction'
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
+import Temp2 from '../../components/Template/tem2'
 import Content from "../../components/Content"
 import BigTitle from '../../components/BigTitle'
 import { makeStyles } from "@material-ui/core"
@@ -19,7 +20,14 @@ const useStyles = makeStyles(theme => ({
 
 const TempList =  () => attraction.map(o => {
   const tempCode = o.temp
-  if(tempCode === 0) return <Temp1 key={o.name} {...o}/>
+  switch(tempCode) {
+    case 0 :
+      return <Temp1 key={o.name} {...o}/>
+    case 1: 
+      return <Temp2 key={o.name} {...o}/>
+    default:
+      return <></>
+  }
 })
 
 const LayoutWithLogo = Layout(true)

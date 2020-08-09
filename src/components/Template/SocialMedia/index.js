@@ -1,5 +1,6 @@
 import React from "react"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
+import Box from "@material-ui/core/Box"
 import Grid from "@material-ui/core/Grid"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -11,15 +12,16 @@ import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "70%",
-    margin: "20px 0px",
+    // width: "70%",
+    margin: "10px 0px",
   },
   link: {
-    margin: "0 5px",
+    cursor: "pointer",
+    marginRight: theme.spacing(3),
     "& span": {
       marginLeft: "1em",
       color: "gray",
-      fontSize: "1em",
+      fontSize: "0.9em",
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
@@ -32,14 +34,15 @@ const SocialMedia = props => {
   const { content } = props
   const MediaLink = () =>
     content.map(el => {
+      const col = 12 / content.length
       return (
-        <Grid
-          container
-          item
-          xs
-          alignItems={"center"}
-          style={{ cursor: "pointer" }}
-        >
+        // <Grid
+        //   container
+        //   item
+        //   xs={col}
+        //   alignItems={"center"}
+        // >
+        
           <a href={el.href} target="blank" className={classes.link}>
             <FontAwesomeIcon
               size="lg"
@@ -54,18 +57,21 @@ const SocialMedia = props => {
             />
             <span>{el.name}</span>
           </a>
-        </Grid>
+        // </Grid>
       )
     })
   return (
-    <Grid
-      container
-      direction="row"
-      justify="flex-start"
-      className={classes.root}
-    >
+    // <Grid
+    //   container
+    //   direction="row"
+    //   justify="flex-start"
+    //   className={classes.root}
+    //   spacing={1}
+    // >
+    <Box mt={3} display={"flex"} justifyContent={"flex-start"}>
       <MediaLink />
-    </Grid>
+    </Box>
+    // </Grid>
   )
 }
 
