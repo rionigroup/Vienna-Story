@@ -14,6 +14,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     // width: "70%",
     margin: "10px 0px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      margin: "1em auto"
+    },
   },
   link: {
     cursor: "pointer",
@@ -33,8 +37,7 @@ const SocialMedia = props => {
   const classes = useStyles()
   const { content } = props
   const MediaLink = () =>
-    content.map(el => {
-      const col = 12 / content.length
+    content.map((el,i) => {
       return (
         // <Grid
         //   container
@@ -42,21 +45,21 @@ const SocialMedia = props => {
         //   xs={col}
         //   alignItems={"center"}
         // >
-        
-          <a href={el.href} target="blank" className={classes.link}>
-            <FontAwesomeIcon
-              size="lg"
-              icon={
-                el.icon === 0
-                  ? faFacebookSquare
-                  : el.icon === 1
-                  ? faInstagramSquare
-                  : faMapMarkerAlt
-              }
-              color={"gray"}
-            />
-            <span>{el.name}</span>
-          </a>
+
+        <a href={el.href} target="blank" className={classes.link} key={`${el}+${i}`}>
+          <FontAwesomeIcon
+            size="lg"
+            icon={
+              el.icon === 0
+                ? faFacebookSquare
+                : el.icon === 1
+                ? faInstagramSquare
+                : faMapMarkerAlt
+            }
+            color={"gray"}
+          />
+          <span>{el.name}</span>
+        </a>
         // </Grid>
       )
     })
@@ -68,7 +71,12 @@ const SocialMedia = props => {
     //   className={classes.root}
     //   spacing={1}
     // >
-    <Box mt={3} display={"flex"} justifyContent={"flex-start"}>
+    <Box
+      mt={3}
+      display={"flex"}
+      justifyContent={"flex-start"}
+      className={classes.root}
+    >
       <MediaLink />
     </Box>
     // </Grid>
@@ -80,7 +88,7 @@ SocialMedia.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       href: PropTypes.string,
-      icon: PropTypes.object,
+      icon: PropTypes.number,
     })
   ),
 }

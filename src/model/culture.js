@@ -10,7 +10,7 @@ module.exports.culture = [
     `,
     website: {
       name: "musikverein.at",
-      link: "https://www.musikverein.at"
+      link: "https://www.musikverein.at",
     },
     openHours: `Mon-Fri, 09am-8pm`,
     phone: "+43 1 5058190",
@@ -32,7 +32,13 @@ module.exports.culture = [
         icon: 2,
       },
     ],
-    pic: ["/images/culture/1.jpg"],
+    pic: [
+      "/images/culture/1.jpg",
+      "/images/culture/2.jpg",
+      "/images/culture/3.jpg",
+      "/images/culture/4.jpg",
+      "/images/culture/5.jpg",
+    ],
     temp: 0,
   },
 ]

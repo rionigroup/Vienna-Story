@@ -33,7 +33,11 @@ module.exports.food = [
       },
     ],
     pic: [
-      '/images/food/1.jpg'
+      "/images/food/1.jpg",
+      "/images/food/2.jpg",
+      "/images/food/3.jpg",
+      "/images/food/4.jpg",
+      "/images/food/5.jpg",
     ],
     temp: 0
   },

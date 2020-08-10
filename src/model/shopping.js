@@ -32,7 +32,9 @@ module.exports.shopping = [
       }
     ],
     pic: [
-      '/images/shopping/1.jpg'
+      '/images/shopping/1.jpg',
+      '/images/shopping/2.jpg',
+      '/images/shopping/3.jpg',
     ],
     temp: 0
   },

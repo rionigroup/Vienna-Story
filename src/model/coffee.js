@@ -34,7 +34,7 @@ module.exports.coffee = [
       },
     ],
     pic: [
-      '/images/coffee/1.png'
+      '/images/coffee/1.jpeg'
     ],
     temp: 0
   },

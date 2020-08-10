@@ -1,28 +1,28 @@
 module.exports.wellness = [
   {
     type: "wellness",
-    name: "Tiergarten Schönbrunn",
-    title: "The World's oldest existing zoo",
+    name: "Arany Spa - Park Hyatt Vienna",
+    title: "A luxurious spa in the city center in a former bank vault",
     intro: `
-    The Schönbrunn Zoo in Vienna is the oldest existing zoo in the world, opened in 1752. It is part of a UNESCO World Cultural Heritage site with the imperial summer residence of Schönbrunn at its center. Here you’ll find and interesting architectural mix, with original buildings from the Baroque era mingling with modern zoo architecture.
-    The Zoo is considered one of the best and most modern ones in the world, providing a unique blend of culture and nature, while promoting conservation and biodiversity. One may marvel at more than 700 species – some highly endangered – from Siberian tigers, pandas and hippos to one-horned rhinoceroses. Other highlights include a Koala House, the aquarium and the “Polarium” with ice bears.
-    A visit to Schönbrunn is one of the favorite activities for families living in Vienna and for their children to enjoy the Orang.erie – home of the orang-utans and the Rainforest House.
+    The Arany Spa is located in the former vault of a bank building, which is now home to the luxurious Park Hyatt Vienna hotel in the heart of Vienna. Where once gold and banknotes were stored, an oasis of calm invites one to relax and recharge ones batteries.
+    The former vault was converted into an exceptional spa area with pool and fitness room on 1000m2. As a reminder of the splendid time, the 3-ton safe door was left in its place.
+    Come and enjoy the Spa, which offers many ways to indulge and take a break from a visit to the bustling city. 
     `,
     website: {
       name: "hyatt.com",
       link: "https://www.hyatt.com/de-DE/spas/Arany-Spa/home"
     },
-    openHours: `Mon-Sun, 09am-6.30pm`,
-    phone: "+43 1 877 92 94-0",
+    openHours: `Mon-Sun, 10am-10pm`,
+    phone: "+43 1 22740 1130",
     socialMedia: [
       {
-        name: "@zoovienna ",
-        href: "https://www.facebook.com/zoovienna",
+        name: "ParkHyattVienna ",
+        href: "https://www.facebook.com/ParkHyattVienna",
         icon: 0,
       },
       {
-        name: "@zooviennaschonbrunn",
-        href: "https://www.instagram.com/zooviennaschonbrunn/",
+        name: "@parkhyattvienna",
+        href: "https://www.instagram.com/parkhyattvienna/",
         icon: 1,
       },
       {
