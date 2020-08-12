@@ -10,13 +10,13 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
   },
   photo: {
-    width: '500px',
-    height: '333px'
-  }
+    width: "500px",
+    height: "333px",
+  },
 }))
 
 const CustomCarousel = props => {
-  const { imgList, isCarousel } = props
+  const { imgList } = props
   const maxIndex = imgList.length - 1
   const [slideIndex, setSlideIndex] = useState(0)
   const classes = useStyles()
@@ -51,26 +51,32 @@ const CustomCarousel = props => {
     setSlideIndex(newIndex)
   }
 
-  return (
-    <Carousel
-      className={classes.root}
-      autoPlay={false}
-      next={() => handleOnSlide("next")}
-      prev={() => handleOnSlide("prev")}
-    >
-      <Card />
-    </Carousel>
-  )
+  const renderCarousel = () => {
+    if (imgList.length <= 1) {
+      return <Card />
+    } else {
+      return (
+        <Carousel
+          className={classes.root}
+          autoPlay={false}
+          next={() => handleOnSlide("next")}
+          prev={() => handleOnSlide("prev")}
+        >
+          <Card />
+        </Carousel>
+      )
+    }
+  }
+
+  return renderCarousel()
 }
 
 CustomCarousel.propTypes = {
   list: PropTypes.arrayOf(PropTypes.string),
-  isCarousel: PropTypes.bool,
 }
 
 CustomCarousel.default = {
   list: ["/image/noPic.png"],
-  isCarousel: false,
 }
 
 export default CustomCarousel

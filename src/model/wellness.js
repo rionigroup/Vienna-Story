@@ -32,7 +32,7 @@ module.exports.wellness = [
       },
     ],
     pic: [
-      '/images/wellness/1.jpg'
+      '/images/wellness/1.jpeg'
     ],
     temp: 0
   },
