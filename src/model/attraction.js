@@ -34,6 +34,7 @@ module.exports.attraction = [
     ],
     pic: ["/images/attraction/1.jpg"],
     temp: 0,
+    bgColor: "#e0e0e0"
   },
   {
     type: "attraction",
@@ -69,5 +70,6 @@ module.exports.attraction = [
     ],
     pic: ["/images/attraction/2.jpg"],
     temp: 1,
+    bgColor: "#e0e0e0"
   },
 ]

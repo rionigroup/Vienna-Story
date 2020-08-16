@@ -1,10 +1,10 @@
 import React from "react"
 import SEO from "../../components/seo"
-import { wellness } from '../../model/wellness'
+import { wellness } from "../../model/wellness"
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
 import Content from "../../components/Content"
-import BigTitle from '../../components/BigTitle'
+import BigImgTitle from "../../components/BigImgTitle"
 import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -14,13 +14,14 @@ const useStyles = makeStyles(theme => ({
     width: "80%",
     height: "100vh",
     margin: theme.spacing(2),
-  }
+  },
 }))
 
-const TempList =  () => wellness.map(o => {
-  const tempCode = o.temp
-  if(tempCode === 0) return <Temp1 key={o.name} {...o}/>
-})
+const TempList = () =>
+  wellness.map(o => {
+    const tempCode = o.temp
+    if (tempCode === 0) return <Temp1 key={o.name} {...o} />
+  })
 
 const LayoutWithLogo = Layout(true)
 
@@ -31,8 +32,8 @@ const Wellness = props => {
       <SEO title="Vienna Wellness" />
       <Content>
         <div className={classes.container}>
-        <BigTitle text={'WELLNESS'}/>
-          <TempList/>
+          <BigImgTitle imgUrl={"/images/title/wellness.png"} />
+          <TempList />
         </div>
       </Content>
     </LayoutWithLogo>

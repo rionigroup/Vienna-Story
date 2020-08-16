@@ -3,7 +3,7 @@ import SEO from "../../components/seo"
 import { culture } from '../../model/culture'
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
-import BigTitle from '../../components/BigTitle'
+import BigImgTitle from '../../components/BigImgTitle'
 import Content from "../../components/Content"
 import { makeStyles } from "@material-ui/core"
 
@@ -31,7 +31,7 @@ const Culture = props => {
       <SEO title="Vienna Culture" />
       <Content>
         <div className={classes.container}>
-        <BigTitle text={'CULTURE'}/>
+        <BigImgTitle imgUrl={'/images/title/culture.png'}/>
           <TempList/>
         </div>
       </Content>

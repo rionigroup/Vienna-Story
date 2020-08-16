@@ -4,7 +4,7 @@ import { coffee } from '../../model/coffee'
 import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
 import Content from "../../components/Content"
-import BigTitle from '../../components/BigTitle'
+import BigImgTitle from '../../components/BigImgTitle'
 import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -31,7 +31,7 @@ const Coffee = props => {
       <SEO title="Vienna Attraction" />
       <Content>
         <div className={classes.container}>
-        <BigTitle text={'COFFEE'}/>
+        <BigImgTitle imgUrl={'/images/title/coffee.png'}/>
           <TempList/>
         </div>
       </Content>

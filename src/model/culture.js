@@ -40,5 +40,6 @@ module.exports.culture = [
       "/images/culture/5.jpg",
     ],
     temp: 0,
+    bgColor: "#fffdb5"
   },
 ]

@@ -18,7 +18,7 @@ let lastScrollTop = 0
 const langs = [
   { text: "English", value: "en-US" },
   { text: "中文", value: "zh-TW" },
-  { text: "日本語", value: "jp" },
+  // { text: "日本語", value: "jp" },
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    color: "#609595",
+    color: theme.palette.grey[700],
   },
   languageText: {
     display: "flex",

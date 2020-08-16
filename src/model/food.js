@@ -38,6 +38,7 @@ module.exports.food = [
       "/images/food/4.jpg",
       "/images/food/5.jpg",
     ],
-    temp: 0
+    temp: 0,
+    bgColor: "#c2cfd4"
   },
 ]

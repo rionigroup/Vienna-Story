@@ -5,7 +5,7 @@ import Layout from "../../components/layout"
 import Temp1 from "../../components/Template/tem1"
 import Temp2 from '../../components/Template/tem2'
 import Content from "../../components/Content"
-import BigTitle from '../../components/BigTitle'
+import BigImgTitle from '../../components/BigImgTitle'
 import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -39,7 +39,7 @@ const Attraction = props => {
       <SEO title="Vienna Attraction" />
       <Content>
         <div className={classes.container}>
-          <BigTitle text={'ATTRACTION'}/>
+          <BigImgTitle imgUrl={'/images/title/attraction.png'}/>
           <TempList/>
         </div>
       </Content>

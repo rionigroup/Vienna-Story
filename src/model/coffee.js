@@ -36,6 +36,7 @@ module.exports.coffee = [
     pic: [
       '/images/coffee/1.jpeg'
     ],
-    temp: 0
+    temp: 0,
+    bgColor: "#a78c87"
   },
 ]

@@ -36,6 +36,7 @@ module.exports.shopping = [
       '/images/shopping/2.jpg',
       '/images/shopping/3.jpg',
     ],
-    temp: 0
+    temp: 0,
+    bgColor: "#e84343"
   },
 ]

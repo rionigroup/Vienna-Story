@@ -41,14 +41,14 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
-    background: "#609595",
+    border: "3px solid black",
     width: "350px",
     height: "330px",
-    borderRadius: theme.borderRadius,
     animation: `$slideFadeRight 1.5s`,
   },
   backBlock: {
     position: "relative",
+    border: "3px solid black",
     zIndex: 200,
     width: "400px",
     height: "330px",
@@ -88,7 +88,6 @@ const useStyles = makeStyles(theme => ({
 
 const Template2 = props => {
   const {
-    type,
     name,
     title,
     intro,
@@ -97,6 +96,7 @@ const Template2 = props => {
     phone,
     socialMedia,
     pic,
+    bgColor
   } = props
   const classes = useStyles()
   return (
@@ -110,7 +110,7 @@ const Template2 = props => {
     >
       <Grid container item xs={12} md={12} lg={5} justify={"center"}>
         <div className={classes.backgroundCard}>
-          <Card className={classes.backBlock}>
+          <Card className={classes.backBlock} style={{background: bgColor}}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
         </div>
@@ -166,6 +166,7 @@ Template2.propTypes = {
     })
   ),
   pic: PropTypes.string,
+  bgColor: PropTypes.string
 }
 
 Template2.defaultProps = {
@@ -195,6 +196,7 @@ Template2.defaultProps = {
     },
   ],
   pic: "/image/noPic.png",
+  bgColor: "#ffffff"
 }
 
 export default Template2
