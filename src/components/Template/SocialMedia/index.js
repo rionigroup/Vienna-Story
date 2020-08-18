@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebookSquare,
   faInstagramSquare,
+  faChrome
 } from "@fortawesome/free-brands-svg-icons"
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 import { makeStyles } from "@material-ui/core"
@@ -54,11 +55,13 @@ const SocialMedia = props => {
                 ? faFacebookSquare
                 : el.icon === 1
                 ? faInstagramSquare
-                : faMapMarkerAlt
+                : el.icon === 2
+                ? faMapMarkerAlt
+                : faChrome
             }
             color={"gray"}
           />
-          <span>{el.name}</span>
+          {/* <span>{el.name}</span> */}
         </a>
         // </Grid>
       )

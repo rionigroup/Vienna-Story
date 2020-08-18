@@ -3,10 +3,13 @@
  */
 import React from "react"
 import PropTypes from "prop-types"
-import Grid from "@material-ui/core/Grid"
-import Card from "@material-ui/core/Card"
+import parse from "html-react-parser"
+import {
+  Grid,
+  Card,
+  Typography
+} from "@material-ui/core"
 import Carousel from "../../../components/Carousel"
-import Typography from "@material-ui/core/Typography"
 import SocialMedia from "../SocialMedia"
 import { makeStyles } from "@material-ui/core/styles"
 
@@ -15,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   contentWrapper: {
-    padding: theme.spacing(5),
+    padding: `1em 6em`,
     animation: `$slideFadeRight 1.5s`,
   },
   bigTitle: {
@@ -23,16 +26,20 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "600",
   },
   title: {
-    color: theme.palette.grey[700],
+    color: theme.palette.grey[800],
+    fonWeight: "600",
     margin: "1em auto",
   },
   textBody: {
-    color: theme.palette.grey[600],
+    color: theme.palette.grey[500],
     margin: "1em auto",
     fontSize: "1em",
+    "& p": {
+      margin: 0,
+    },
   },
   subTitle1: {
-    color: theme.palette.grey[600],
+    color: theme.palette.grey[500],
     fontSize: "0.8em",
     fontWeight: "600",
     display: "block",
@@ -100,7 +107,7 @@ const Template1 = props => {
     phone,
     socialMedia,
     pic,
-    bgColor
+    bgColor,
   } = props
   const classes = useStyles()
   return (
@@ -112,36 +119,50 @@ const Template1 = props => {
       alignItems="center"
       className={classes.root}
     >
-      <Grid item xs={12} md={12} lg={7}>
+      <Grid item xs={12} md={12} lg={8}>
         <div className={classes.contentWrapper}>
-          <Typography variant={"h5"} className={classes.bigTitle}>
+          <Typography variant={"h6"} className={classes.bigTitle}>
             {name}
           </Typography>
-          <Typography variant={"h6"} className={classes.title}>
+          <Typography variant={"subtitle1"} className={classes.title}>
             {title}
           </Typography>
-          <Typography variant={"body2"} className={classes.textBody}>
-            {intro}
+          <Typography variant={"body1"} className={classes.textBody}>
+            {parse(intro)}
           </Typography>
-          <Typography variant={"overline"} className={classes.subTitle1}>
+          {/* <Typography variant={"overline"} className={classes.subTitle1}>
             Official Website:
             <a href={website.link} target="blank">
               <span>{website.name}</span>
             </a>
-          </Typography>
-          <Typography variant={"overline"} className={classes.subTitle1}>
-            Opening:
-            <span>{openHours}</span>
-          </Typography>
-          <Typography variant={"overline"} className={classes.subTitle1}>
-            Phone:
-            <span>{phone}</span>
-          </Typography>
-          <SocialMedia content={socialMedia} />
+          </Typography> */}
+          <Grid container>
+            <Grid item xs={8}>
+              <Typography variant={"overline"} className={classes.subTitle1}>
+                Opening:
+                <span>{openHours}</span>
+              </Typography>
+              <Typography variant={"overline"} className={classes.subTitle1}>
+                Phone:
+                <span>{phone}</span>
+              </Typography>
+            </Grid>
+            <Grid item xs={4} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <SocialMedia content={socialMedia} />
+            </Grid>
+          </Grid>
         </div>
       </Grid>
-      <Grid container item xs={12} md={12} lg={5} justify={"center"}>
-        <div className={classes.backgroundCard} style={{background: bgColor}}>
+      <Grid
+        container
+        item
+        xs={12}
+        md={12}
+        lg={4}
+        justify="center"
+        direction="column"
+      >
+        <div className={classes.backgroundCard} style={{ background: bgColor }}>
           <Card className={classes.backBlock}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
@@ -164,13 +185,13 @@ Template1.propTypes = {
   phone: PropTypes.string,
   socialMedia: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
+      // name: PropTypes.string,
       href: PropTypes.string,
       icon: PropTypes.number,
     })
   ),
   pic: PropTypes.arrayOf(PropTypes.string),
-  bgColor: PropTypes.string
+  bgColor: PropTypes.string,
 }
 
 Template1.defaultProps = {
@@ -200,7 +221,7 @@ Template1.defaultProps = {
     },
   ],
   pic: ["/image/noPic.png"],
-  bgColor: "#ffffff"
+  bgColor: "#ffffff",
 }
 
 export default Template1

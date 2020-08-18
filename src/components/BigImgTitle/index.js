@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 const BigImgTitle = ({ imgUrl }) => {
   const classes = useStyles()
   return (
-    <Box width="100%" display="flex" justifyContent="center">
+    <Box width="100%" display="flex" justifyContent="center" mb={3}>
       <CardMedia image={imgUrl} className={classes.media} />
     </Box>
   )
