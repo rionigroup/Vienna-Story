@@ -39,7 +39,6 @@ module.exports.culture = [
     ],
     pic: [
       "/images/culture/1.jpg",
-      "/images/culture/2.jpg",
       "/images/culture/3.jpg",
       "/images/culture/4.jpg",
       "/images/culture/5.jpg",

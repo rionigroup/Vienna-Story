@@ -8,7 +8,7 @@ import {
   faInstagramSquare,
   faChrome
 } from "@fortawesome/free-brands-svg-icons"
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
+import { faMapMarkerAlt, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -57,7 +57,7 @@ const SocialMedia = props => {
                 ? faInstagramSquare
                 : el.icon === 2
                 ? faMapMarkerAlt
-                : faChrome
+                : faGlobeEurope
             }
             color={"gray"}
           />

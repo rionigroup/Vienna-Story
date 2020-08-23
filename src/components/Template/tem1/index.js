@@ -4,13 +4,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import parse from "html-react-parser"
-import {
-  Grid,
-  Card,
-  Typography
-} from "@material-ui/core"
+import { Grid, Card, Typography, Box } from "@material-ui/core"
 import Carousel from "../../../components/Carousel"
 import SocialMedia from "../SocialMedia"
+import CardMedia from "@material-ui/core/CardMedia"
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
@@ -18,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   contentWrapper: {
-    padding: `1em 6em`,
+    padding: `1em`,
     animation: `$slideFadeRight 1.5s`,
   },
   bigTitle: {
@@ -31,7 +28,7 @@ const useStyles = makeStyles(theme => ({
     margin: "1em auto",
   },
   textBody: {
-    color: theme.palette.grey[500],
+    color: theme.palette.grey[600],
     margin: "1em auto",
     fontSize: "1em",
     "& p": {
@@ -50,8 +47,9 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
+    marginTop: "20px",
     border: "3px solid black",
-    width: "350px",
+    width: "450px",
     height: "330px",
     // #827255
     // borderRadius: theme.borderRadius,
@@ -61,10 +59,10 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     border: "3px solid black",
     zIndex: 200,
-    width: "400px",
+    width: "450px",
     height: "330px",
     top: "5%",
-    left: "-20%",
+    left: "-5%",
     [theme.breakpoints.down("md")]: {
       top: "0px",
       left: "0px",
@@ -74,6 +72,10 @@ const useStyles = makeStyles(theme => ({
   photo: {
     width: "100%",
     height: "100%",
+  },
+  mustDoIcon: {
+    width: "70px",
+    height: "70px",
   },
   "@keyframes slideFadeRight": {
     "0%": {
@@ -119,7 +121,7 @@ const Template1 = props => {
       alignItems="center"
       className={classes.root}
     >
-      <Grid item xs={12} md={12} lg={8}>
+      <Grid item xs={12} md={12} lg={7}>
         <div className={classes.contentWrapper}>
           <Typography variant={"h6"} className={classes.bigTitle}>
             {name}
@@ -147,25 +149,57 @@ const Template1 = props => {
                 <span>{phone}</span>
               </Typography>
             </Grid>
-            <Grid item xs={4} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Grid
+              item
+              xs={4}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <SocialMedia content={socialMedia} />
             </Grid>
           </Grid>
         </div>
       </Grid>
-      <Grid
-        container
-        item
-        xs={12}
-        md={12}
-        lg={4}
-        justify="center"
-        direction="column"
-      >
+      <Grid item xs={12} md={12} lg={5}>
         <div className={classes.backgroundCard} style={{ background: bgColor }}>
           <Card className={classes.backBlock}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
+          {/* <Grid container>
+            <Grid item xs={6}>
+              <Box
+                mt={4}
+                mb={2}
+                display="flex"
+                justifyContent="flex-start"
+                width="100%"
+              >
+                <CardMedia
+                  className={classes.mustDoIcon}
+                  image={"/images/tipLight.png"}
+                  title="Light Bubble"
+                />
+              </Box>
+            </Grid>
+            <Grid item xs={6}>
+              <Box
+                mt={4}
+                mb={2}
+                display="flex"
+                justifyContent="center"
+                width="100%"
+              >
+                <CardMedia
+                  className={classes.mustDoIcon}
+                  image={"/images/tipLight.png"}
+                  title="Light Bubble"
+                />
+              </Box>
+            </Grid>
+          </Grid> */}
         </div>
       </Grid>
     </Grid>

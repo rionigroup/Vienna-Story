@@ -38,7 +38,10 @@ module.exports.attraction = [
         icon: 3
       }
     ],
-    pic: ["/images/attraction/1.jpg"],
+    pic: [
+      "/images/attraction/1/1.jpg",
+      "/images/attraction/1/2.jpg"
+    ],
     temp: 0,
     bgColor: "#e0e0e0"
   },
@@ -82,7 +85,7 @@ module.exports.attraction = [
         icon: 3,
       },
     ],
-    pic: ["/images/attraction/2.jpg"],
+    pic: ["/images/attraction/2/2.jpg"],
     temp: 1,
     bgColor: "#e0e0e0"
   },

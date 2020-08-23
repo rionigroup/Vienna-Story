@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   contentWrapper: {
-    padding: `1em 6em`,
+    padding: `1em`,
     animation: `$slideFadeLeft 1.5s`,
   },
   bigTitle: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     margin: "1em auto",
   },
   textBody: {
-    color: theme.palette.grey[500],
+    color: theme.palette.grey[600],
     margin: "1em auto",
     fontSize: "1em",
     "& p": {
@@ -46,15 +46,15 @@ const useStyles = makeStyles(theme => ({
   backgroundCard: {
     position: "relative",
     border: "3px solid black",
-    width: "350px",
-    height: "330px",
+    width: "393px",
+    height: "320px",
     animation: `$slideFadeRight 1.5s`,
   },
   backBlock: {
     position: "relative",
     border: "3px solid black",
     zIndex: 200,
-    width: "400px",
+    width: "450px",
     height: "330px",
     top: "5%",
     left: "5%",
@@ -112,22 +112,14 @@ const Template2 = props => {
       alignItems="center"
       className={classes.root}
     >
-      <Grid
-        container
-        item
-        xs={12}
-        md={12}
-        lg={4}
-        justify={"center"}
-        direction="column"
-      >
+      <Grid xs={12} md={12} lg={5}>
         <div className={classes.backgroundCard} style={{ background: bgColor }}>
           <Card className={classes.backBlock}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
         </div>
       </Grid>
-      <Grid item xs={12} md={12} lg={8} justify="center">
+      <Grid item xs={12} md={12} lg={7} justify="center">
         <div className={classes.contentWrapper}>
           <Typography variant={"h6"} className={classes.bigTitle}>
             {name}

@@ -23,16 +23,16 @@ const langs = [
 
 const useStyles = makeStyles(theme => ({
   roundMap: {
-    width: "40px",
-    height: "40px",
+    width: "30px",
+    height: "32px",
     cursor: "pointer",
   },
   headWrapper: {
     position: "fixed",
     zIndex: "999",
-    margin: "0 auto",
+    margin: "0 auto 1em auto",
     width: "100vw",
-    padding: "0.8em 1.0875rem",
+    padding: "0.5em 1.0875rem",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -73,8 +73,8 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
   },
   media: {
-    width: "250px",
-    height: "35px",
+    width: "187px",
+    height: "26px",
     margin: "auto 10px",
     [theme.breakpoints.down("xs")]: {
       width: "60%",
@@ -94,9 +94,14 @@ const Header = props => {
     let st = window.pageYOffset || document.documentElement.scrollTop
     if(st > lastScrollTop) {
       setIsNavOverBody(true)
-    } else {
+    } 
+    if(st === 0) {
       setIsNavOverBody(false)
     }
+    
+    // else {
+    //   // setIsNavOverBody(false)
+    // }
     lastScrollTop = st <= 0 ? 0 : st;
   }
 
@@ -135,7 +140,7 @@ const Header = props => {
     <header>
       <div
         className={classes.headWrapper}
-        style={isNavOverBody ? { background: "rgba(235, 216, 208, 0.3)" } : null}
+        style={hasLogo ? { background: "rgba(235, 216, 208, 1)" } : null}
       >
         <Grid item xs={7} sm={9} md={9} lg={9}>
           {hasLogo && (

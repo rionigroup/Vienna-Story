@@ -11,10 +11,10 @@ module.exports.shopping = [
     Every precious crafted stone of a Schullin piece was handpicked and most times even sourced by a family member at markets and miners across the world. Your unique and bespoke jewellery would definitely be found here. 
     
     `,
-    website: {
-      name: "schullin.com",
-      link: "https://schullin.com/en/homepage/"
-    },
+    // website: {
+    //   name: "schullin.com",
+    //   link: "https://schullin.com/en/homepage/"
+    // },
     openHours: "Mon-Sat, 10am-6pm",
     phone: "+43 1 533 9007",
     socialMedia: [

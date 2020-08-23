@@ -38,7 +38,8 @@ module.exports.wellness = [
       },
     ],
     pic: [
-      '/images/wellness/1.jpeg'
+      '/images/wellness/1.png',
+      '/images/wellness/2.png'
     ],
     temp: 0,
     bgColor: "#b8a77a"
