@@ -59,10 +59,7 @@ const CustomCarousel = props => {
         <Carousel
           className={classes.root}
           autoPlay={true}
-          interval={3500}
-          indicators={true}
-          animation={'fade'}
-          timeout={1000}
+          interval={3000}
           next={() => handleOnSlide("next")}
           prev={() => handleOnSlide("prev")}
         >

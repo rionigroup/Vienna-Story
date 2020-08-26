@@ -10,25 +10,18 @@ module.exports.attraction = [
     <p><br></p>
     Only a fraction of the rooms are open to the public, but it’s enough to get an impression of the grand interior, with its Rococco-style decoration. Every surface is covered with a combination of decorative gold leaf, painted frescoes, white enamel and crystal chandeliers.
     `,
-    // website: {
-    //   name: "www.schoenbrunn.at",
-    //   link: "https://www.schoenbrunn.at/en/",
-    // },
     openHours: "Mon-Sun, 10am-5pm",
     phone: "+43 1 811 13-0",
     socialMedia: [
       {
-        // name: "Schloß Schönbrunn",
         href: "https://www.facebook.com/schloss.schoenbrunn/",
         icon: 0,
       },
       {
-        // name: "@schoenbrunnpalace",
         href: "https://www.instagram.com/schoenbrunnpalace/",
         icon: 1,
       },
       {
-        // name: "map",
         href:
           "https://www.google.com/maps/place/Schönbrunn+Palace/@48.1858124,16.31057,17z/data=!3m1!4b1!4m5!3m4!1s0x476da8091cc07cbf:0x4e69ba5de4ea8bc9!8m2!3d48.1858124!4d16.312764",
         icon: 2,
@@ -41,6 +34,10 @@ module.exports.attraction = [
     pic: [
       "/images/attraction/1/1.jpg",
       "/images/attraction/1/2.jpg"
+    ],
+    mustDo: [
+      "Climb to the top of Gloriette",
+      "Look for Zodiac Signs in the Maze"
     ],
     temp: 0,
     bgColor: "#e0e0e0"

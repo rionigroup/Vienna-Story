@@ -43,6 +43,10 @@ module.exports.food = [
       "/images/food/4.jpg",
       "/images/food/5.jpg",
     ],
+    mustDo: [
+      `Experience "A Collection of Fascinating People" by Glass`,
+      "A stroll in Lichtenstein Park after lunch for Coffee and Chocolate"
+    ],
     temp: 0,
     bgColor: "#c2cfd4"
   },

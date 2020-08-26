@@ -13,9 +13,10 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    margin: "1em auto",
   },
   contentWrapper: {
-    padding: `1em`,
+    padding: `1em 3em 1em 1em`,
     animation: `$slideFadeRight 1.5s`,
   },
   bigTitle: {
@@ -31,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.grey[600],
     margin: "1em auto",
     fontSize: "1em",
+    textAlign: "justify",
     "& p": {
       margin: 0,
     },
@@ -47,12 +49,10 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
-    marginTop: "20px",
+    marginTop: "2em",
     border: "3px solid black",
     width: "450px",
     height: "330px",
-    // #827255
-    // borderRadius: theme.borderRadius,
     animation: `$slideFadeLeft 1.5s`,
   },
   backBlock: {
@@ -74,8 +74,13 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
   },
   mustDoIcon: {
-    width: "70px",
-    height: "70px",
+    width: "60px",
+    height: "60px",
+  },
+  mustDoWrapper: {
+    position: "relative",
+    left: "-5%",
+    marginTop: "3em",
   },
   "@keyframes slideFadeRight": {
     "0%": {
@@ -104,7 +109,7 @@ const Template1 = props => {
     name,
     title,
     intro,
-    website,
+    mustDo,
     openHours,
     phone,
     socialMedia,
@@ -112,13 +117,27 @@ const Template1 = props => {
     bgColor,
   } = props
   const classes = useStyles()
+  const MustDo = ({ title }) => (
+    <Grid item xs={6}>
+      <Box display="flex" width="100%">
+        <CardMedia
+          className={classes.mustDoIcon}
+          image={"/images/tipLight.png"}
+          title="Light Bubble"
+        />
+        <Box display="flex" justifyContent="start" alignItems="center">
+          <span style={{ fontSize: "0.8em", padding: '10px' }}>{title}</span>
+        </Box>
+      </Box>
+    </Grid>
+  )
   return (
     <Grid
       container
       spacing={5}
       direction="row"
       justify="center"
-      alignItems="center"
+      // alignItems="center"
       className={classes.root}
     >
       <Grid item xs={12} md={12} lg={7}>
@@ -132,12 +151,6 @@ const Template1 = props => {
           <Typography variant={"body1"} className={classes.textBody}>
             {parse(intro)}
           </Typography>
-          {/* <Typography variant={"overline"} className={classes.subTitle1}>
-            Official Website:
-            <a href={website.link} target="blank">
-              <span>{website.name}</span>
-            </a>
-          </Typography> */}
           <Grid container>
             <Grid item xs={8}>
               <Typography variant={"overline"} className={classes.subTitle1}>
@@ -168,39 +181,11 @@ const Template1 = props => {
           <Card className={classes.backBlock}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
-          {/* <Grid container>
-            <Grid item xs={6}>
-              <Box
-                mt={4}
-                mb={2}
-                display="flex"
-                justifyContent="flex-start"
-                width="100%"
-              >
-                <CardMedia
-                  className={classes.mustDoIcon}
-                  image={"/images/tipLight.png"}
-                  title="Light Bubble"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={6}>
-              <Box
-                mt={4}
-                mb={2}
-                display="flex"
-                justifyContent="center"
-                width="100%"
-              >
-                <CardMedia
-                  className={classes.mustDoIcon}
-                  image={"/images/tipLight.png"}
-                  title="Light Bubble"
-                />
-              </Box>
-            </Grid>
-          </Grid> */}
         </div>
+        <Grid container className={classes.mustDoWrapper}>
+          <MustDo title={mustDo[0]} />
+          <MustDo title={mustDo[1]} />
+        </Grid>
       </Grid>
     </Grid>
   )

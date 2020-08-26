@@ -43,6 +43,10 @@ module.exports.culture = [
       "/images/culture/4.jpg",
       "/images/culture/5.jpg",
     ],
+    mustDo: [
+      "The Famous Musikverein Tour",
+      "Sunday mornings Vienna Philharmonic Concert"
+    ],
     temp: 0,
     bgColor: "#fffdb5"
   },

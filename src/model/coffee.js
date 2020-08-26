@@ -43,6 +43,10 @@ module.exports.coffee = [
       '/images/coffee/1.jpeg',
       '/images/coffee/2.jpeg',
     ],
+    mustDo: [
+      "5pm - 10pm Live Piano Music",
+      "Pack the Displayed Cake"
+    ],
     temp: 0,
     bgColor: "#a78c87"
   },

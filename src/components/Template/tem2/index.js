@@ -12,9 +12,10 @@ import { makeStyles } from "@material-ui/core/styles"
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    margin: '1em auto'
   },
   contentWrapper: {
-    padding: `1em`,
+    padding: `1em 1em 1em 3em`,
     animation: `$slideFadeLeft 1.5s`,
   },
   bigTitle: {
@@ -30,6 +31,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.grey[600],
     margin: "1em auto",
     fontSize: "1em",
+    textAlign: "justify",
     "& p": {
       margin: 0,
     },
@@ -45,6 +47,7 @@ const useStyles = makeStyles(theme => ({
   },
   backgroundCard: {
     position: "relative",
+    marginTop: "3em",
     border: "3px solid black",
     width: "393px",
     height: "320px",

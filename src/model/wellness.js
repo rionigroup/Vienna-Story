@@ -41,6 +41,10 @@ module.exports.wellness = [
       '/images/wellness/1.png',
       '/images/wellness/2.png'
     ],
+    mustDo: [
+      "The Old 3-Ton Safe Door",
+      "Pre-dinner Cocktail at the Bar"
+    ],
     temp: 0,
     bgColor: "#b8a77a"
   },

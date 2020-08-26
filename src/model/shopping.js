@@ -44,6 +44,10 @@ module.exports.shopping = [
       '/images/shopping/2.jpg',
       '/images/shopping/3.jpg',
     ],
+    mustDo: [
+      "Hans Hollein's Facade Design",
+      "Ask for a Bespoke Jewelry Selection & the Atelier"
+    ],
     temp: 0,
     bgColor: "#e84343"
   },
