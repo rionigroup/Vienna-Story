@@ -23,8 +23,12 @@ const TempList =  () => attraction.map(o => {
   switch(tempCode) {
     case 0 :
       return <Temp1 key={o.name} {...o}/>
-    case 1: 
-      return <Temp2 key={o.name} {...o}/>
+    case 1:
+      if(window.screen.availWidth <= '1024'){
+        return <Temp1 key={o.name} {...o}/>
+      }else {
+        return <Temp2 key={o.name} {...o}/>
+      }
     default:
       return <></>
   }

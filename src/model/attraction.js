@@ -84,6 +84,7 @@ module.exports.attraction = [
     ],
     pic: ["/images/attraction/2/2.jpg"],
     temp: 1,
-    bgColor: "#e0e0e0"
+    bgColor: "#e0e0e0",
+    mustDo: [],
   },
 ]

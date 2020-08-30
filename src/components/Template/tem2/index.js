@@ -115,14 +115,14 @@ const Template2 = props => {
       alignItems="center"
       className={classes.root}
     >
-      <Grid xs={12} md={12} lg={5}>
+      <Grid xs={12} xl={5}>
         <div className={classes.backgroundCard} style={{ background: bgColor }}>
           <Card className={classes.backBlock}>
             <Carousel isCarousel={true} imgList={pic} />
           </Card>
         </div>
       </Grid>
-      <Grid item xs={12} md={12} lg={7} justify="center">
+      <Grid item xs={12} xl={7} justify="center">
         <div className={classes.contentWrapper}>
           <Typography variant={"h6"} className={classes.bigTitle}>
             {name}
@@ -133,12 +133,6 @@ const Template2 = props => {
           <Typography variant={"body1"} className={classes.textBody}>
             {parse(intro)}
           </Typography>
-          {/* <Typography variant={"overline"} className={classes.subTitle1}>
-            Official Website:
-            <a href={website.link} target="blank">
-              <span>{website.name}</span>
-            </a>
-          </Typography> */}
           <Grid container>
             <Grid item xs={6}>
               <Typography variant={"overline"} className={classes.subTitle1}>

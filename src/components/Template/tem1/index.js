@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   contentWrapper: {
     padding: `1em 3em 1em 1em`,
     animation: `$slideFadeRight 1.5s`,
+    [theme.breakpoints.down("lg")]: {
+      padding: `0`,
+    },
   },
   bigTitle: {
     color: "#609595",
@@ -54,6 +57,10 @@ const useStyles = makeStyles(theme => ({
     width: "450px",
     height: "330px",
     animation: `$slideFadeLeft 1.5s`,
+    [theme.breakpoints.down("lg")]: {
+      background: "none",
+      border: "none"
+    },
   },
   backBlock: {
     position: "relative",
@@ -63,10 +70,9 @@ const useStyles = makeStyles(theme => ({
     height: "330px",
     top: "5%",
     left: "-5%",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("lg")]: {
       top: "0px",
       left: "0px",
-      width: "100%",
     },
   },
   photo: {
@@ -81,6 +87,17 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     left: "-5%",
     marginTop: "3em",
+    [theme.breakpoints.down("lg")]: {
+      position: "flex",
+      flexDirection: "column",
+      left: "0px",
+      padding: "3em"
+    }
+  },
+  mustDoList: {
+    [theme.breakpoints.down("lg")]: {
+      margin: "1em"  
+    }
   },
   "@keyframes slideFadeRight": {
     "0%": {
@@ -118,15 +135,15 @@ const Template1 = props => {
   } = props
   const classes = useStyles()
   const MustDo = ({ title }) => (
-    <Grid item xs={6}>
-      <Box display="flex" width="100%">
+    <Grid item lg={12} xl={6}>
+      <Box display="flex" width="100%" className={classes.mustDoList}>
         <CardMedia
           className={classes.mustDoIcon}
           image={"/images/tipLight.png"}
           title="Light Bubble"
         />
         <Box display="flex" justifyContent="start" alignItems="center">
-          <span style={{ fontSize: "0.8em", padding: '10px' }}>{title}</span>
+          <span style={{ fontSize: "0.8em", padding: "10px" }}>{title}</span>
         </Box>
       </Box>
     </Grid>
@@ -137,10 +154,9 @@ const Template1 = props => {
       spacing={5}
       direction="row"
       justify="center"
-      // alignItems="center"
       className={classes.root}
     >
-      <Grid item xs={12} md={12} lg={7}>
+      <Grid item xs={12} xl={7}>
         <div className={classes.contentWrapper}>
           <Typography variant={"h6"} className={classes.bigTitle}>
             {name}
@@ -176,15 +192,24 @@ const Template1 = props => {
           </Grid>
         </div>
       </Grid>
-      <Grid item xs={12} md={12} lg={5}>
-        <div className={classes.backgroundCard} style={{ background: bgColor }}>
-          <Card className={classes.backBlock}>
-            <Carousel isCarousel={true} imgList={pic} />
-          </Card>
-        </div>
-        <Grid container className={classes.mustDoWrapper}>
-          <MustDo title={mustDo[0]} />
-          <MustDo title={mustDo[1]} />
+      <Grid item xs={12} xl={5}>
+        <Grid container display="flex" justifyContent="center">
+          <Grid item xs>
+            <div
+              className={classes.backgroundCard}
+              style={{ background: bgColor }}
+            >
+              <Card className={classes.backBlock}>
+                <Carousel isCarousel={true} imgList={pic} />
+              </Card>
+            </div>
+          </Grid>
+          <Grid item xs>
+            <Grid container className={classes.mustDoWrapper}>
+              <MustDo title={mustDo[0]} />
+              <MustDo title={mustDo[1]} />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
